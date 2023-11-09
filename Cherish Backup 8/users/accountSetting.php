@@ -7,6 +7,9 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="user_css/accountSetting.css">
+         <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
     </head>
 
     <body>
@@ -14,11 +17,15 @@
             <div class="container inner-container">
                 <div class="row">
                     <div class="col-4 text-center col-height" style="border-right: 1px solid #ffa9a3; width:390px; word-wrap: break-word;">
-                        <?php
+                        <?php                            
+                            session_start();
                             $dbc = mysqli_connect("localhost","root","");
                             mysqli_select_db($dbc,"cherish_db");
 
-                            $query = mysqli_query($dbc,"SELECT * FROM user_profile WHERE `uid`= '64ede61757fa6'");
+                            ini_set("display_errors",0);
+                            error_reporting(E_ALL);
+
+                            $query = mysqli_query($dbc,"SELECT * FROM user_profile WHERE `uid`= '".$_SESSION["identifier"]."'");
                                         
                             while ($row = $query->fetch_assoc()){
 
@@ -176,7 +183,7 @@
 
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1">Password</span>
-                                            <input type="password" name="password" id="password" class="form-control" placeholder="Create a password" aria-label="Create a password" aria-describedby="basic-addon1" required>
+                                            <input type="password" name="password" id="password" class="form-control" placeholder="Enter password" aria-label="Enter password" aria-describedby="basic-addon1" required>
                                         </div>
 
                                         <div class="d-flex justify-content-end">
@@ -223,7 +230,7 @@
 
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1">Password</span>
-                                            <input type="password" name="password" id="password" class="form-control" placeholder="Create a password" aria-label="Create a password" aria-describedby="basic-addon1" required>
+                                            <input type="password" name="password" id="password" class="form-control" placeholder="Enter password" aria-label="Enter password" aria-describedby="basic-addon1" required>
                                         </div>
 
                                         <div class="d-flex justify-content-end">
@@ -248,6 +255,23 @@
                                             //regex is used on the above line. The regex filter out all the symobl.
                                             phnField.value = filteredValue;
                                         });
+
+                                        const phnNumLength = document.getElementById('phoneNumber');
+                                        const phnLengthInvalid = document.getElementById('invalidPhonePrompt');
+
+                                        phnNumLength.addEventListener('input', validatePhnLength);
+
+                                        function validatePhnLength() {
+                                            const length = phnNumLength.value.length;
+
+                                            if (length <= 9) {
+                                                invalidPhonePrompt.style.display = 'block';
+                                                registerButton.setAttribute('disabled', 'true');
+                                            } else {
+                                                invalidPhonePrompt.style.display = 'none';
+                                                registerButton.removeAttribute('disabled');
+                                            }
+                                        }
                                     </script> 
                                 </div>
 
@@ -292,7 +316,7 @@
                                         
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1">Password</span>
-                                            <input type="password" name="password" id="password" class="form-control" placeholder="Create a password" aria-label="Create a password" aria-describedby="basic-addon1" required>
+                                            <input type="password" name="password" id="password" class="form-control" placeholder="Enter password" aria-label="Enter password" aria-describedby="basic-addon1" required>
                                         </div>
 
                                         <div class="d-flex justify-content-end">
@@ -324,5 +348,39 @@
                 </div>
             </div>
         </div>
+
+        <?php
+            $alertCondition = $_GET['actionCondition'];
+            if($alertCondition == "emailModifiedTrue"){
+                echo"<script>
+                        alertify.alert('Email Changed Successfully!');
+                    </script>";
+            }
+            else if($alertCondition == "passwordModifiedTrue"){
+                echo"<script>
+                        alertify.alert('Password Changed Successfully!');
+                    </script>";
+            }
+            else if($alertCondition == "phoneModifiedTrue"){
+                echo"<script>
+                        alertify.alert('Phone Number Changed Successfully!');
+                    </script>";
+            }
+            else if($alertCondition == "addressModifiedTrue"){
+                echo"<script>
+                        alertify.alert('Reside Address Changed Successfully!');
+                    </script>";
+            }
+            else if($alertCondition == "pictureModifiedTrue"){
+                echo"<script>
+                        alertify.alert('Profile Picture Changed Successfully!');
+                    </script>";
+            }
+            else if($alertCondition == "bioModifiedTrue"){
+                echo"<script>
+                        alertify.alert('Profile Bio Changed Successfully!');
+                    </script>";
+            }
+        ?>
     </body>
 </html>

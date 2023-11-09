@@ -1,3 +1,4 @@
+
 <?php
 /**
 //Headers that are required for testing in postman
@@ -22,45 +23,40 @@ $user = new Users_account($db);
 //this line of code is used for api testing through postman. Disabled when not in testing.
 //$data = json_decode(file_get_contents("php://input"));
 
+session_start();
 //this if statement is a secondary check (a backend check, it check for any data empty or missing along the way)
 if( 
-    !empty($_POST['emailPart'])&&
-    !empty($_POST['domainPart'])&&
-    !empty($_POST['icNumber'])&&
-    !empty($_POST['password'])&&
-    !empty($_POST['confirmPassword'])
-    
+    !empty($_SESSION['identifier'])&& 
+    !empty($_POST['phoneNumber'])&&
+    !empty($_POST['password'])
 ){
     //if none data are missing, the data will be sanitize
-    $emailPartGiven = htmlspecialchars(strip_tags($_POST['emailPart']));
-    $domainPartGiven = htmlspecialchars(strip_tags($_POST['domainPart']));
-    $icNumberGiven = htmlspecialchars(strip_tags($_POST['icNumber']));
+    $phoneNumberGiven = htmlspecialchars(strip_tags($_POST['phoneNumber']));
     $passwordGiven = htmlspecialchars(strip_tags($_POST['password']));
 
-    // set the value to the object properties to be used 
-    $user->emailAddress = $emailPartGiven.'@'.$domainPartGiven;
-    $user->icNumber = $icNumberGiven;
-    $user->password = $passwordGiven;    
+    //set the value to the object properties
+    $user->uid = $_SESSION['identifier'];
+    $user->phoneNumber = $phoneNumberGiven;  
+    $user->password = $passwordGiven;       
+   
     
-
-    //Call the function resetPassword to sign in. The function is define in the obj file.
-    if($user->resetPassword()){
-        //make a redirection here when successfully reset password
-        header("Location:https://google.com");
-
+    //Call the function updatePhone to update phone number. The function is define in the obj file.
+    if($user->updatePhone()){
+        //make a redirection here when successfully updated the phone number
+        header("Location:../../users/accountSetting.php?actionCondition=phoneModifiedTrue");
     }
-    //unable to sign in
+    //unable to update the phone number
     else{
   
-       echo"error";
+       echo"Password provided incorrect, please try again.";
       
     }
 }
   
-// data requested to reset password incomplete.
+// data requested to update the phone number incomplete
 else{
 
-    echo"data missing";
+    echo"Data Error. Unable to update phone number at the moment.";
 
 }
 ?>

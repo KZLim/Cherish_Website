@@ -73,33 +73,18 @@
 
                         <div class="tab-content"  style="overflow: auto; height: 600px;" >
                             <div class="tab-pane fade show active" id="myDonationRecord">
-                                <h2>Tab 1 Content</h2>
-                                <p>This is the content of Tab 1.</p>
-                                <h2>Tab 1 Content</h2>
-                                <p>This is the content of Tab 1.</p>
-                                <h2>Tab 1 Content</h2>
-                                <p>This is the content of Tab 1.</p>
-                                <h2>Tab 1 Content</h2>
-                                <p>This is the content of Tab 1.</p>
-                                <h2>Tab 1 Content</h2>
-                                <p>This is the content of Tab 1.</p>
-                                <h2>Tab 1 Content</h2>
-                                <p>This is the content of Tab 1.</p>
-                                <h2>Tab 1 Content</h2>
-                                <p>This is the content of Tab 1.</p>
-                                <h2>Tab 1 Content</h2>
-                                <p>This is the content of Tab 1.</p>
-                                <h2>Tab 1 Content</h2>
-                                <p>This is the content of Tab 1.</p>
+                                <h2>My Donation Record</h2>
+                                <p>This section will display all the user's donation record.</p>
+                            </div>
 
-                            </div>
                             <div class="tab-pane fade" id="currentParticipation">
-                                <h2>Tab 2 Content</h2>
-                                <p>This is the content of Tab 2.</p>
+                                <h2>Current Participation</h2>
+                                <p>This section will display the user's current participation.</p>
                             </div>
+
                             <div class="tab-pane fade" id="pastParticipation">
-                                <h2>Tab 3 Content</h2>
-                                <p>This is the content of Tab 3.</p>
+                                <h2>Past Participation</h2>
+                                <p>This section will display the user's past participation.</p>
                             </div>
                         </div>
                     </div>

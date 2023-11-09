@@ -289,7 +289,6 @@
             $stmt11 = $this->conn->prepare($query11);
             $stmt12 = $this->conn->prepare($query12);
 
-
             //bind the value to be used in the query
             $stmt11->bindParam(":uidData",$this->uid); 
             $stmt12->bindParam(":uidData",$this->uid); 

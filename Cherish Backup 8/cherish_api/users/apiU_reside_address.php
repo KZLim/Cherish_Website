@@ -25,40 +25,46 @@ $user = new Users_account($db);
 session_start();
 //this if statement is a secondary check (a backend check, it check for any data empty or missing along the way)
 if( 
-    !empty($_SESSION['identifier'])&&  //check session value 
-    !empty($_POST['emailPart'])&&
-    !empty($_POST['domainPart'])&&
+    !empty($_SESSION['identifier'])&&  
+    !empty($_POST['addressLine'])&&
+    !empty($_POST['city'])&&
+    !empty($_POST['state'])&&
+    !empty($_POST['postalCode'])&&
     !empty($_POST['password'])
 ){
     //if none data are missing, the data will be sanitize
-    $emailPartGiven = htmlspecialchars(strip_tags($_POST['emailPart']));
-    $domainPartGiven = htmlspecialchars(strip_tags($_POST['domainPart']));
+    $addressLineGiven = htmlspecialchars(strip_tags($_POST['addressLine']));
+    $cityGiven = htmlspecialchars(strip_tags($_POST['city']));
+    $stateGiven = htmlspecialchars(strip_tags($_POST['state']));
+    $postCodeGiven = htmlspecialchars(strip_tags($_POST['postalCode']));
     $passwordGiven = htmlspecialchars(strip_tags($_POST['password']));
 
     //set the value to the object properties
     $user->uid = $_SESSION['identifier'];
-    $user->emailAddress = $emailPartGiven.'@'.$domainPartGiven;  //set new email address to obj email address property
-    $user->password = $passwordGiven;                            //set the password given to the password property for validation purpose
-   
+    $user->addressLine = $addressLineGiven;  
+    $user->city = $cityGiven;      
+    $user->state = $stateGiven; 
+    $user->postalCode = $postCodeGiven; 
+    $user->password = $passwordGiven;
     
-    //Call the function updateEmail to update email. The function is define in the obj file.
-    if($user->updateEmail()){
-        //make a redirection here when successfully updated the email
-        header("Location:https://google.com");
+    //Call the function updateReside to update residing address. The function is define in the obj file.
+    if($user->updateReside()){
+        //make a redirection here when successfully updated the reside address
+        header("Location:../../users/accountSetting.php?actionCondition=addressModifiedTrue");
 
     }
-    //unable to update the email
+    //unable to update the reside address
     else{
   
-       echo"error";
+       echo"Password provided incorrect, please try again.";
       
     }
 }
   
-// data requested to update the email incomplete
+// data requested to update the reside address incomplete
 else{
 
-    echo"data missing";
+    echo"Data Error. Unable to update residing address at the moment.";
 
 }
 ?>

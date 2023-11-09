@@ -22,42 +22,42 @@ $user = new Users_account($db);
 //this line of code is used for api testing through postman. Disabled when not in testing.
 //$data = json_decode(file_get_contents("php://input"));
 
+session_start();
 //this if statement is a secondary check (a backend check, it check for any data empty or missing along the way)
 if( 
+    !empty($_SESSION['identifier'])&& 
     !empty($_POST['emailPart'])&&
     !empty($_POST['domainPart'])&&
     !empty($_POST['password'])
-    
 ){
     //if none data are missing, the data will be sanitize
     $emailPartGiven = htmlspecialchars(strip_tags($_POST['emailPart']));
     $domainPartGiven = htmlspecialchars(strip_tags($_POST['domainPart']));
     $passwordGiven = htmlspecialchars(strip_tags($_POST['password']));
 
-    $emailAddressReady = $emailPartGiven."@".$domainPartGiven; //combining the email 
-
-    // set the value to the object properties to be used 
-    $user->emailAddress = $emailAddressReady;
-    $user->password = $passwordGiven;    
+    //set the value to the object properties
+    $user->uid = $_SESSION['identifier'];
+    $user->emailAddress = $emailPartGiven.'@'.$domainPartGiven;  //set new email address to obj email address property
+    $user->password = $passwordGiven;                            //set the password given to the password property for validation purpose
+   
     
-
-    //Call the function validateSignIn to sign in. The function is define in the obj file.
-    if($user->validateSignIn()){
-        //make a redirection here when successfully sign in
-        header("Location:../../users/profile.php");
+    //Call the function updateEmail to update email. The function is define in the obj file.
+    if($user->updateEmail()){
+        //make a redirection here when successfully updated the email
+        header("Location:../../users/accountSetting.php?actionCondition=emailModifiedTrue");
     }
-    //unable to sign in
+    //unable to update the email
     else{
   
-       echo"unable";
+       echo"Password provided incorrect, please try again.";
       
     }
 }
   
-// sign in credential incomplete 
+// data requested to update the email incomplete
 else{
 
-echo"error";
+    echo"Data Error. Unable to update the email at the moment.";
 
 }
 ?>

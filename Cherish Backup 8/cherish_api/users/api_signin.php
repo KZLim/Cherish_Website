@@ -21,49 +21,43 @@ $user = new Users_account($db);
   
 //this line of code is used for api testing through postman. Disabled when not in testing.
 //$data = json_decode(file_get_contents("php://input"));
-session_start();
+
 //this if statement is a secondary check (a backend check, it check for any data empty or missing along the way)
 if( 
-    !empty($_SESSION['identifier'])&&  //check session value 
-    !empty($_POST['addressLine'])&&
-    !empty($_POST['city'])&&
-    !empty($_POST['state'])&&
-    !empty($_POST['postalCode'])&&
+    !empty($_POST['emailPart'])&&
+    !empty($_POST['domainPart'])&&
     !empty($_POST['password'])
+    
 ){
     //if none data are missing, the data will be sanitize
-    $addressLineGiven = htmlspecialchars(strip_tags($_POST['addressLine']));
-    $cityGiven = htmlspecialchars(strip_tags($_POST['city']));
-    $stateGiven = htmlspecialchars(strip_tags($_POST['state']));
-    $postCodeGiven = htmlspecialchars(strip_tags($_POST['postalCode']));
+    $emailPartGiven = htmlspecialchars(strip_tags($_POST['emailPart']));
+    $domainPartGiven = htmlspecialchars(strip_tags($_POST['domainPart']));
     $passwordGiven = htmlspecialchars(strip_tags($_POST['password']));
 
-    //set the value to the object properties
-    $user->uid = "64ede61757fa6";
-    $user->addressLine = $addressLineGiven;  
-    $user->city = $cityGiven;      
-    $user->state = $stateGiven; 
-    $user->postalCode = $postCodeGiven; 
-    $user->password = $passwordGiven;
-    
-    //Call the function updateReside to update residing address. The function is define in the obj file.
-    if($user->updateReside()){
-        //make a redirection here when successfully updated the reside address
-        header("Location:https://google.com");
+    $emailAddressReady = $emailPartGiven."@".$domainPartGiven; //combining the email 
 
+    // set the value to the object properties to be used 
+    $user->emailAddress = $emailAddressReady;
+    $user->password = $passwordGiven;    
+    
+
+    //Call the function validateSignIn to sign in. The function is define in the obj file.
+    if($user->validateSignIn()){
+        //make a redirection here when successfully sign in
+        header("Location:../../users/profile.php");
     }
-    //unable to update the reside address
+    //unable to sign in
     else{
   
-       echo"error";
+       echo"Sign in credential incorrect, please try again.";
       
     }
 }
   
-// data requested to update the reside address incomplete
+// sign in credential incomplete 
 else{
 
-    echo"data missing";
+    echo"Data Error. Unable to sign in at the moment.";
 
 }
 ?>

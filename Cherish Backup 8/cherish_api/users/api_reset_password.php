@@ -24,31 +24,35 @@ $user = new Users_account($db);
 
 //this if statement is a secondary check (a backend check, it check for any data empty or missing along the way)
 if( 
+    !empty($_POST['emailPart'])&&
+    !empty($_POST['domainPart'])&&
     !empty($_POST['icNumber'])&&
     !empty($_POST['password'])&&
     !empty($_POST['confirmPassword'])
     
 ){
     //if none data are missing, the data will be sanitize
+    $emailPartGiven = htmlspecialchars(strip_tags($_POST['emailPart']));
+    $domainPartGiven = htmlspecialchars(strip_tags($_POST['domainPart']));
     $icNumberGiven = htmlspecialchars(strip_tags($_POST['icNumber']));
     $passwordGiven = htmlspecialchars(strip_tags($_POST['password']));
 
     // set the value to the object properties to be used 
-    $user->uid = '64ede61757fa6';
+    $user->emailAddress = $emailPartGiven.'@'.$domainPartGiven;
     $user->icNumber = $icNumberGiven;
     $user->password = $passwordGiven;    
     
 
     //Call the function resetPassword to sign in. The function is define in the obj file.
-    if($user->changePassword()){
+    if($user->resetPassword()){
         //make a redirection here when successfully reset password
-        header("Location:https://google.com");
+        header("Location:../../users/signin.php");
 
     }
     //unable to sign in
     else{
   
-       echo"error";
+       echo"Crendential provided incorrect, please try again.";
       
     }
 }
@@ -56,7 +60,7 @@ if(
 // data requested to reset password incomplete.
 else{
 
-    echo"data missing";
+    echo"Data Error. Unable to reset password at the moment.";
 
 }
 ?>
