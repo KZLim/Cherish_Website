@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    position: relative;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.header ul {
+    list-style-type: none;  /*remove listing type (the dot)*/
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.header li {
+    margin-right: 25px;
+}
+
+.header a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+}
+
+/* This creates the hamburger line*/
+.hamburger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+}
+
+.header .sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    list-style-type: none;
+    padding: 0;
+}
+
+.header .sub-menu li {
+    padding: 10px 20px;  /*sub menu top and left margin*/
+}
+
+.header .sub-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/*Desktop and laptop will be on hover instead of click*/
+@media screen and (min-width: 769px) {
+    .header .dropdown:hover .sub-menu {
+        display: block;
+    }
+}
+
+/*Mobile and tablet*/
+@media screen and (max-width: 768px) {
+    .header ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        z-index: 10;
+    }
+
+    .header ul.active {
+        display: flex;
+    }
+
+    /*dipslay the hamburger line*/
+    .hamburger-menu {
+        display: flex;
+    }
+}
