@@ -104,6 +104,8 @@
             if($row){
                 //verify the given password and the hashed password in the db
                 if(password_verify($this->password, $row['password'])){
+                    session_start();
+			        $_SESSION["identifier"] = $row["uid"] ;
                     return true;
                 }
                 else{

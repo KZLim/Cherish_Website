@@ -21,10 +21,10 @@ $user = new Users_account($db);
   
 //this line of code is used for api testing through postman. Disabled when not in testing.
 //$data = json_decode(file_get_contents("php://input"));
-
+session_start();
 //this if statement is a secondary check (a backend check, it check for any data empty or missing along the way)
 if( 
-    //!empty($_SESSION['uid'])&&  //check session value 
+    !empty($_SESSION['identifier'])&&  //check session value 
     !empty($_POST['phoneNumber'])&&
     !empty($_POST['password'])
 ){
@@ -33,7 +33,7 @@ if(
     $passwordGiven = htmlspecialchars(strip_tags($_POST['password']));
 
     //set the value to the object properties
-    $user->uid = "64ede61757fa6";
+    $user->uid = $_SESSION['identifier'];
     $user->phoneNumber = $phoneNumberGiven;  //set new email address to obj email address property
     $user->password = $passwordGiven;       //set the password given to the password property for validation purpose
    

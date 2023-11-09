@@ -25,7 +25,6 @@
                         <input class="btn btn-primary" id="test" type="submit" value="Test">
                     </div>
                 </form>
-
             </script>
            
         </div>

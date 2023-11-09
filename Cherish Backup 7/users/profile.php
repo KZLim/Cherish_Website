@@ -15,10 +15,11 @@
                 <div class="row">
                     <div class="col-4 text-center col-height" style="border-right: 1px solid #ffa9a3; width:390px; word-wrap: break-word;">
                         <?php
+                            session_start();
                             $dbc = mysqli_connect("localhost","root","");
                             mysqli_select_db($dbc,"cherish_db");
 
-                            $query = mysqli_query($dbc,"SELECT * FROM user_profile WHERE `uid`= '64ede61757fa6'");
+                            $query = mysqli_query($dbc,"SELECT * FROM user_profile WHERE `uid`= '".$_SESSION["identifier"]."'");
                                         
                             while ($row = $query->fetch_assoc()){
 

@@ -21,10 +21,10 @@ $user = new Users_account($db);
   
 //this line of code is used for api testing through postman. Disabled when not in testing.
 //$data = json_decode(file_get_contents("php://input"));
-
+session_start();
 //this if statement is a secondary check (a backend check, it check for any data empty or missing along the way)
 if( 
-    //!empty($_SESSION['uid'])&&  //check session value 
+    !empty($_SESSION['identifier'])&&  //check session value 
     !empty($_POST['addressLine'])&&
     !empty($_POST['city'])&&
     !empty($_POST['state'])&&

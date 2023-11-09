@@ -78,9 +78,11 @@
         
             if($stmt2->execute()){
                 echo"bio changed";
+                return true;
             }
             else{
                 echo"bio not change";
+                return false;
             }
 
         }

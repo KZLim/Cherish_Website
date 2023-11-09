@@ -44,15 +44,12 @@ if(
     //Call the function validateSignIn to sign in. The function is define in the obj file.
     if($user->validateSignIn()){
         //make a redirection here when successfully sign in
-        header("Location:https://google.com");
-
-
-
+        header("Location:../../users/profile.php");
     }
     //unable to sign in
     else{
   
-       
+       echo"unable";
       
     }
 }
@@ -60,7 +57,7 @@ if(
 // sign in credential incomplete 
 else{
 
-
+echo"error";
 
 }
 ?>
