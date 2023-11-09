@@ -9,7 +9,6 @@
         <link rel="stylesheet" href="user_css/register.css">
     </head>
 
-
     <body>
         <div class="register-container" style="justify-content: center; width: 500px; height: 700px;">
                 <h4 style="margin-left: auto; margin-right: auto; margin-top: 10px;">Setup your profile:</h4>

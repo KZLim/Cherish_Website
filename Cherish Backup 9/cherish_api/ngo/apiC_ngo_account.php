@@ -46,11 +46,11 @@ if(
     //Call the function createAccount to create an account. The function is define in the obj file.
     if($ngo->createAccount()){
         //make a redirection here when successfully created the profile.
-        header("Location:https://www.google.com");
+        header("Location: ../../ngo/profileSetup.php?uid=$user->uid");
     }
     //unable to create account
     else{
-  
+        
        echo"ngo error 1.";
       
     }

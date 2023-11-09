@@ -23,7 +23,6 @@
                     </div>
                     <p id="invalidICPrompt" style="color: red; display: none;">IC too short</p>
 
-
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Name</span>
                         <input type="text" name="username" id="username" oninput="checkNameLength(this, 50)" class="form-control" placeholder="Enter your name" aria-label="Enter your name" aria-describedby="basic-addon1" required>
