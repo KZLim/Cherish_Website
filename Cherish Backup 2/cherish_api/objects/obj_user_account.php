@@ -25,7 +25,7 @@
         }
 
         // create product
-        function create(){
+        function createAccount(){
         
             // query to insert record
             $query = "INSERT INTO

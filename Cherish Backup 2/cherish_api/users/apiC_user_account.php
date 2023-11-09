@@ -21,7 +21,8 @@ $user = new Users_account($db);
   
 //this line of code is used for api testing through postman. Disabled when not in testing.
 //$data = json_decode(file_get_contents("php://input"));
-  
+
+//this if statement is a secondary check (a backend check, it check for any data empty or missing along the way)
 if( 
     !empty($_POST['icNumber'])&&
     !empty($_POST['username'])&&
@@ -34,7 +35,7 @@ if(
     !empty($_POST['postalCode'])&&
     !empty($_POST['password'])
 ){
-
+    //if none data are missing, the data will be sanitize
     $icNumberReady = htmlspecialchars(strip_tags($_POST['icNumber']));
     $usernameReady = htmlspecialchars(strip_tags($_POST['username']));
     $emailPartReady = htmlspecialchars(strip_tags($_POST['emailPart']));
@@ -46,9 +47,10 @@ if(
     $postCodeReady = htmlspecialchars(strip_tags($_POST['postalCode']));
     $passwordReady = htmlspecialchars(strip_tags($_POST['password']));
 
-    $emailAddressReady = $emailPartReady."@".$domainPartReady;
-    $genderReady = "";
+    $emailAddressReady = $emailPartReady."@".$domainPartReady;  //concat the email and domain field together
+    $genderReady = "";   //declare a gender variable
 
+    //an if statement to check the gender of the user by looking at whether their IC las digit is odd or even
     if(((int)(substr($icNumberReady, -1)))% 2 == 0){
         $genderReady = "Female";
     }
@@ -56,9 +58,9 @@ if(
         $genderReady = "Male";
     }
 
-    // set the value to the object variable to be used in the query
+    // set the value to the object properties to be used 
     $user->icNumber = $icNumberReady;
-    $user->uid = uniqid();
+    $user->uid = uniqid();    //uniqid() will generate a random 13digit id using reference to the timestamp of the computer
     $user->name = $usernameReady;
     $user->password = $passwordReady;
     $user->emailAddress = $emailAddressReady;
@@ -70,11 +72,10 @@ if(
     $user->postalCode = $postCodeReady;
 
     //Call the function create to create an account. The function is define in the obj file.
-    if($user->create()){
+    if($user->createAccount()){
         //make a redirection here when successfully created the profile.
-        header("Location: https://www.google.com");
+        header("Location: ../../users/profileSetup.php?uid=$user->uid&name=$usernameReady");
     }
-  
     //unable to create account
     else{
   
