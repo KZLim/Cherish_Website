@@ -16,7 +16,7 @@ include_once '../objects/obj_user_profile.php';
   
 $database = new Database();
 $db = $database->getConnection();
-  
+
 $user = new Users_profile($db);
   
 //this line of code is used for api testing through postman. Disabled when not in testing.

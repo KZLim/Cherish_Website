@@ -84,5 +84,37 @@
             }
 
         }
+
+        function updatePhoto(){
+            $query3 = "UPDATE user_profile SET profile_path=:profilePathData WHERE `uid`=:uidData";
+
+            // prepare query
+            $stmt3 = $this->conn->prepare($query3);
+
+            //we rename the image name that the user give (for simpler file management)
+            $fileType=substr($this->profilePicName, strpos($this->profilePicName, ".")); //this step take the extension of the image file (png,jpg...)
+            $newImageName = $this->uid.uniqid().$fileType;  //this generate the new name for the image, the formula: (userid+image unique id+extension)
+
+            //retrieve data from the obj properties and assign to another variable to prepare for binding
+            $uidData = $this->uid;
+            $profilePathData = $newImageName;
+
+            // bind the values so that it can be use in the query
+            $stmt3->bindParam(":uidData", $uidData);
+            $stmt3->bindParam(":profilePathData", $profilePathData);
+
+            // execute query and finishing this query will store the reamining data needed for the profile into the database (incl the image new name)
+            if($stmt3->execute()){
+                //after having new name, and error is check, the file is then move to the destination path for image storin
+                if($this->errorCount == 0){     
+                    $img_upload_path = '../../users_images/'.$newImageName;
+                    move_uploaded_file($this->tmpPath,$img_upload_path);
+                }
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
     }
 ?>

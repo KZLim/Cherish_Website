@@ -118,6 +118,7 @@
         function resetPassword(){
 
             $newPassword = password_hash($this->password, PASSWORD_DEFAULT);
+
             $cipherMethod = "AES-128-CTR";
             $decryptionKey = "Theonlylimittoourrealizationoftomorrowwillbeourdoubtsoftoday";
             $initVector = "Cherish Moments.";
@@ -152,10 +153,12 @@
                 }
                 else{
                     echo"not reset";
+                    return false;
                 }
             }    
             else{
                 echo"Record Not Found";
+                return false;
             }
         }
 
@@ -188,6 +191,9 @@
                     return false;
                 }
             }
+            else{
+                return false;
+            }
         }
 
         function updatePhone(){
@@ -218,6 +224,9 @@
                 else{
                     return false;
                 }
+            }
+            else{
+                return false;
             }
         }
 
@@ -255,6 +264,9 @@
                     echo"Address Not Changed";
                     return false;
                 }
+            }
+            else{
+                return false;
             }
         }
 

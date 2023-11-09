@@ -29,7 +29,7 @@
                     </div>
 
                     <div class="d-flex justify-content-end">
-                        <input class="btn btn-primary" id="signinBtn" type="submit" value="Signin">
+                        <input class="btn btn-primary" id="signinBtn" type="submit" value="Sign in">
                     </div>
                 </form>
             </div>
@@ -62,10 +62,12 @@
                 });
 
             </script>
-            <div class="inner-container" style="background-color: cyan;" >
+            <div class="inner-container" style="background-color: #63e5ff">
                 <h4 align="center">Together Make A Difference</h4>
                 <p align="center">Sign up an account to give out an helping hand. <br/> No matter how small or big of a help, it makes a difference.</p>
                 <p align="center">Don't Have An Account? Register one with us today.</p>
+
+                <img src="../images/hands-reaching-out-hope.png" height="60%"><br/><br/>
 
                 <div class="d-grid gap-2">
                     <a class="btn btn-primary" href="register.php" role="button">Register</a>
