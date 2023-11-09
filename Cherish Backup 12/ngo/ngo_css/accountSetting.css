@@ -45,6 +45,11 @@ body {
     border-color: #ff7878; 
 }
 
+.btn-reg-signin:disabled {
+    background-color: #ff7878; 
+    border-color: #ff7878; 
+}
+
 /* Custom CSS to change color of selected pills */
 .nav-pills .nav-link.active {
     background-color: #ff7878 ; /* Change this to your desired color */

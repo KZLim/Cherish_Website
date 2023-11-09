@@ -32,6 +32,11 @@ body {
     border-color: #ff7878; 
 }
 
+.btn-reg-signin:disabled {
+    background-color: #ff7878; 
+    border-color: #ff7878; 
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;

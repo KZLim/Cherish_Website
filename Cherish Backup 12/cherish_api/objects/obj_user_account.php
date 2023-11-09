@@ -169,7 +169,7 @@
             $newEmail = $this->emailAddress;
 
 
-            $query5 = "SELECT password FROM user_account WHERE `uid`=:uidData";
+            $query5 = "SELECT `password` FROM user_account WHERE `uid`=:uidData";
             $query6 = "UPDATE  user_account SET email_address=:emailAddressData WHERE `uid`=:uidData;";
 
             $stmt5 = $this->conn->prepare($query5);
