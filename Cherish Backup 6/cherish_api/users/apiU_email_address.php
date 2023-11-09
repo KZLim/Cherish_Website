@@ -24,27 +24,29 @@ $user = new Users_account($db);
 
 //this if statement is a secondary check (a backend check, it check for any data empty or missing along the way)
 if( 
-    !empty($_SESSION['uid'])&&  //check session value 
-    !empty($_POST['phoneNumber'])&&
+    //!empty($_SESSION['uid'])&&  //check session value 
+    !empty($_POST['emailPart'])&&
+    !empty($_POST['domainPart'])&&
     !empty($_POST['password'])
 ){
     //if none data are missing, the data will be sanitize
-    $phoneNumberGiven = htmlspecialchars(strip_tags($_POST['emailPart']));
+    $emailPartGiven = htmlspecialchars(strip_tags($_POST['emailPart']));
+    $domainPartGiven = htmlspecialchars(strip_tags($_POST['domainPart']));
     $passwordGiven = htmlspecialchars(strip_tags($_POST['password']));
 
     //set the value to the object properties
-    $user->uid = //session value
-    $user->phoneNumber = $phoneNumberGiven;  //set new email address to obj email address property
-    $user->password = $passwordGiven;       //set the password given to the password property for validation purpose
+    $user->uid = "64ede61757fa6";
+    $user->emailAddress = $emailPartGiven.'@'.$domainPartGiven;  //set new email address to obj email address property
+    $user->password = $passwordGiven;                            //set the password given to the password property for validation purpose
    
     
-    //Call the function updatePhone to update phone number. The function is define in the obj file.
-    if($user->updatePhone()){
-        //make a redirection here when successfully updated the phone number
+    //Call the function updateEmail to update email. The function is define in the obj file.
+    if($user->updateEmail()){
+        //make a redirection here when successfully updated the email
         header("Location:https://google.com");
 
     }
-    //unable to update the phone number
+    //unable to update the email
     else{
   
        echo"error";
@@ -52,7 +54,7 @@ if(
     }
 }
   
-// data requested to update the phone number incomplete
+// data requested to update the email incomplete
 else{
 
     echo"data missing";

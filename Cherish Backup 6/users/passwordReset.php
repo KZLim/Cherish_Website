@@ -106,6 +106,23 @@
                         registerButton.setAttribute('disabled', 'true');
                     }
                 }
+
+                const icLength = document.getElementById('icNumber');
+                const icLengthInvalid = document.getElementById('invalidICPrompt');
+
+                icLength.addEventListener('input', validateicLength);
+
+                function validateicLength() {
+                    const length = icLength.value.length;
+
+                    if (length < 12) {
+                        icLengthInvalid.style.display = 'block';
+                        registerButton.setAttribute('disabled', 'true');
+                    } else {
+                        icLengthInvalid.style.display = 'none';
+                        registerButton.removeAttribute('disabled');
+                    }
+                }
             </script>
            
         </div>

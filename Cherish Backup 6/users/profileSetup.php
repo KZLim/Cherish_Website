@@ -33,7 +33,7 @@
                     <input type="hidden" name="nameparam" value="<?php echo urldecode($_GET['name'])?>">
 
                     <div class="d-flex justify-content-end">
-                        <input class="btn btn-primary" id="setup" type="submit" value="Done">
+                        <input class="btn btn-primary btn-reg-signin" id="setup" type="submit" value="Done">
                     </div>
                 </form>
 

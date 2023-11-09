@@ -24,30 +24,28 @@ $user = new Users_account($db);
 
 //this if statement is a secondary check (a backend check, it check for any data empty or missing along the way)
 if( 
-    !empty($_SESSION['uid'])&&  //check session value 
-    !empty($_POST['emailPart'])&&
-    !empty($_POST['domainPart'])&&
-    !empty($_POST['password'])
+    !empty($_POST['icNumber'])&&
+    !empty($_POST['password'])&&
+    !empty($_POST['confirmPassword'])
     
 ){
     //if none data are missing, the data will be sanitize
-    $emailPartGiven = htmlspecialchars(strip_tags($_POST['emailPart']));
-    $domainPartGiven = htmlspecialchars(strip_tags($_POST['domainPart']));
+    $icNumberGiven = htmlspecialchars(strip_tags($_POST['icNumber']));
     $passwordGiven = htmlspecialchars(strip_tags($_POST['password']));
 
-    //set the value to the object properties
-    $user->uid = //session value
-    $user->emailAddress = $emailPartGiven.'@'.$domainPartGiven;  //set new email address to obj email address property
-    $user->password = $passwordGiven;                            //set the password given to the password property for validation purpose
-   
+    // set the value to the object properties to be used 
+    $user->uid = '64ede61757fa6';
+    $user->icNumber = $icNumberGiven;
+    $user->password = $passwordGiven;    
     
-    //Call the function updateEmail to update email. The function is define in the obj file.
-    if($user->updateEmail()){
-        //make a redirection here when successfully updated the email
+
+    //Call the function resetPassword to sign in. The function is define in the obj file.
+    if($user->changePassword()){
+        //make a redirection here when successfully reset password
         header("Location:https://google.com");
 
     }
-    //unable to update the email
+    //unable to sign in
     else{
   
        echo"error";
@@ -55,7 +53,7 @@ if(
     }
 }
   
-// data requested to update the email incomplete
+// data requested to reset password incomplete.
 else{
 
     echo"data missing";

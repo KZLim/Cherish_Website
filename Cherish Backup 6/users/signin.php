@@ -29,9 +29,21 @@
                     </div>
 
                     <div class="d-flex justify-content-end">
-                        <input class="btn btn-primary" id="signinBtn" type="submit" value="Sign in">
+                        <input class="btn btn-primary btn-reg-signin" id="signinBtn" type="submit" value="Sign in">
                     </div>
                 </form>
+            </div>
+
+            <div class="inner-container" style="background-color: #ffa9a3">
+                <h4 align="center">Together Make A Difference</h4>
+                <p align="center">Sign up an account to give out an helping hand. <br/> No matter how small or big of a help, it makes a difference.</p>
+                <p align="center">Don't Have An Account? Register one with us today.</p>
+
+                <img src="../images/hands-reaching-out-hope.png" width="80%" height="60%"><br/><br/>
+
+                <div class="d-grid gap-2">
+                    <a class="btn btn-primary btn-reg-signin" href="register.php" role="button">Register</a>
+                </div>
             </div>
 
             <!-- this script section belows contain all the necessary validation code in javascript. certain data are further validated in the back end as well-->
@@ -62,17 +74,6 @@
                 });
 
             </script>
-            <div class="inner-container" style="background-color: #63e5ff">
-                <h4 align="center">Together Make A Difference</h4>
-                <p align="center">Sign up an account to give out an helping hand. <br/> No matter how small or big of a help, it makes a difference.</p>
-                <p align="center">Don't Have An Account? Register one with us today.</p>
-
-                <img src="../images/hands-reaching-out-hope.png" height="60%"><br/><br/>
-
-                <div class="d-grid gap-2">
-                    <a class="btn btn-primary" href="register.php" role="button">Register</a>
-                </div>
-            </div>
         </div>
     </body>
 </html>

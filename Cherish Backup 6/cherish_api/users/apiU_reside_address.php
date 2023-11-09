@@ -24,7 +24,7 @@ $user = new Users_account($db);
 
 //this if statement is a secondary check (a backend check, it check for any data empty or missing along the way)
 if( 
-    !empty($_SESSION['uid'])&&  //check session value 
+    //!empty($_SESSION['uid'])&&  //check session value 
     !empty($_POST['addressLine'])&&
     !empty($_POST['city'])&&
     !empty($_POST['state'])&&
@@ -39,11 +39,12 @@ if(
     $passwordGiven = htmlspecialchars(strip_tags($_POST['password']));
 
     //set the value to the object properties
-    $user->uid = //session value
+    $user->uid = "64ede61757fa6";
     $user->addressLine = $addressLineGiven;  
-    $user->city = $city;      
+    $user->city = $cityGiven;      
     $user->state = $stateGiven; 
     $user->postalCode = $postCodeGiven; 
+    $user->password = $passwordGiven;
     
     //Call the function updateReside to update residing address. The function is define in the obj file.
     if($user->updateReside()){

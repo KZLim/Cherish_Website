@@ -2,18 +2,16 @@ body {
     margin: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
     min-height: 100vh;
-    background-color: #ffa9a3;
+    background-color: #f5f5f5;
 }
 
 .register-container{
     display: flex;    
     flex-wrap: wrap;
-    padding: 0px;
+    margin-top: 25px;
     background-color: white;
-    box-shadow: 0px 1px 2px white;
-    border-radius: 8px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     max-width: 95vw;
     max-height: 95vh;
     width: 1200px;
@@ -22,9 +20,18 @@ body {
 
 .inner-container{
     padding: 15px;
-    border-radius: 8px;
     flex-grow: 1;
 }
+
+.btn-reg-signin{
+    background-color: #ff5757;
+    border-color: #ff5757;
+}
+
+.btn-reg-signin:hover {
+    background-color: #ff7878; 
+    border-color: #ff7878; 
+  }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

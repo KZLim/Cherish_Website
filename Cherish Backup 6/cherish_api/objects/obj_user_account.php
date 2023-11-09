@@ -237,7 +237,7 @@
             $newState = $this->state;
             $newPostCode = $this->postalCode;
 
-            $query9 = "SELECT password FROM user_account WHERE `uid`=:uidData";
+            $query9 = "SELECT `password` FROM user_account WHERE `uid`=:uidData";
             $query10 = "UPDATE  user_account SET address_line=:addressLineData, city=:cityData, `state`=:stateData, postal_code=:postCodeData WHERE `uid`=:uidData;";
 
             $stmt9 = $this->conn->prepare($query9);
@@ -259,6 +259,7 @@
                 if(password_verify($this->password, $row['password'])){
                     $stmt10->execute();
                     echo"Address Changed";
+                    return true;
                 }
                 else{
                     echo"Address Not Changed";
@@ -266,6 +267,53 @@
                 }
             }
             else{
+                return false;
+            }
+        }
+
+        function changePassword(){
+
+            $newPassword = password_hash($this->password, PASSWORD_DEFAULT);
+
+            $cipherMethod = "AES-128-CTR";
+            $decryptionKey = "Theonlylimittoourrealizationoftomorrowwillbeourdoubtsoftoday";
+            $initVector = "Cherish Moments.";
+
+
+            $query11 = "SELECT ic_number FROM user_account WHERE `uid`=:uidData";
+            $query12 = "UPDATE user_account SET `password`=:newPasswordData WHERE `uid`=:uidData;";
+
+            // prepare query for execution
+            $stmt11 = $this->conn->prepare($query11);
+            $stmt12 = $this->conn->prepare($query12);
+
+
+            //bind the value to be used in the query
+            $stmt11->bindParam(":uidData",$this->uid); 
+            $stmt12->bindParam(":uidData",$this->uid); 
+            $stmt12->bindParam(":newPasswordData",$newPassword); 
+
+            //execute the query
+            $stmt11->execute();
+
+            //fetch after executing query
+            $row = $stmt11->fetch(PDO::FETCH_ASSOC);
+
+            $decryptICValue = openssl_decrypt ($row['ic_number'], $cipherMethod ,$decryptionKey, 0, $initVector);
+
+            //the if row check for whether something is fetch, if nothing means that no record found
+            if($row){
+                if($decryptICValue == $this->icNumber){
+                    $stmt12->execute();
+                    return true;
+                }
+                else{
+                    echo"not reset";
+                    return false;
+                }
+            }    
+            else{
+                echo"Record Not Found";
                 return false;
             }
         }

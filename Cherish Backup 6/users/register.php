@@ -90,9 +90,21 @@
                     <p id="matchingPrompt" style="color: red; display: none;">Fields do not match!</p>
 
                     <div class="d-flex justify-content-end">
-                        <input class="btn btn-primary" id="registerBtn" type="submit" value="Register">
+                        <input class="btn btn-primary btn-reg-signin" id="registerBtn" type="submit" value="Register">
                     </div>
                 </form>
+            </div>
+
+            <div class="inner-container" style="background-color: #ffa9a3">
+                <h4 align="center">Together Make A Difference</h4>
+                <p align="center">Sign up an account to give out an helping hand. <br/> No matter how small or big of a help, it makes a difference.</p>
+                <p align="center">If you already have an account, sign in instead.</p>
+
+                <img src="../images/hands-reaching-out-hope.png" width="80%" height="60%"><br/><br/>
+
+                <div class="d-grid gap-2">
+                    <a class="btn btn-primary btn-reg-signin" href="signin.php" role="button">Sign In</a>
+                </div>
             </div>
 
             <!-- this script section belows contain all the necessary validation code in javascript. certain data are further validated in the back end as well-->
@@ -249,17 +261,6 @@
                 }
 
             </script>
-            <div class="inner-container" style="background-color: #63e5ff">
-                <h4 align="center">Together Make A Difference</h4>
-                <p align="center">Sign up an account to give out an helping hand. <br/> No matter how small or big of a help, it makes a difference.</p>
-                <p align="center">If you already have an account, sign in instead.</p>
-
-                <img src="../images/hands-reaching-out-hope.png" height="60%"><br/><br/>
-
-                <div class="d-grid gap-2">
-                    <a class="btn btn-primary" href="signin.php" role="button">Sign In</a>
-                </div>
-            </div>
         </div>
     </body>
 </html>
