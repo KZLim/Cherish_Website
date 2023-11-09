@@ -124,8 +124,6 @@
                     icNumberField.value = filteredValue;
                 });
 
-                
-
                 //this function ensure that the name field does not accept more than 50 characters.
                 function checkNameLength(input, maxLength) {
                     if (input.value.length > maxLength) {
@@ -141,8 +139,6 @@
                     //regex is used on the above line. The regex filter out all the symbol and numbers, allowing only - / and ' 
                     usernameField.value = filteredValue;
                 });
-
-
 
                 //this function ensure that the phone number field does not accept more than 11 character (in numeric)
                 function checkPhoneNumLength(input, maxLength) {

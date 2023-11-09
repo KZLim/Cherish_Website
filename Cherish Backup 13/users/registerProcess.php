@@ -11,6 +11,8 @@
     <body>
         <h1>OK Process Done</h1>
 
+                                                    <input type="number" name="raiseGoal" id="raiseGoal"  min="1" max="100" oninput="checkPostCodeLength(this, 5)" class="form-control" placeholder="Enter raising goal (RM)" aria-label="Enter raising goal (RM)" aria-describedby="basic-addon1" required>
+
         <?Php
         $cipherMethod = "AES-128-CTR";
             $iv_length = openssl_cipher_iv_length($cipherMethod);

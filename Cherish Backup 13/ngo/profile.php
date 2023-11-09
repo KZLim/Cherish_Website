@@ -130,8 +130,57 @@
                     </div>
 
                     <div class="tab-pane fade" id="donationCampaign">
-                        <h2>Donation Campaign</h2>
+                        <h2 class="text-center">Donation Campaign</h2>
+                        <div class="text-end" style="margin-right: 10px;">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addDonationCampaign">
+                                Launch New Campaign
+                            </button>
+                        </div>
+                        <div class="modal fade" id="addDonationCampaign" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Create a donation campaign</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="campaignForm" action="../cherish_api/ngo/apiC_ngo_campaign.php" method="POST" enctype="multipart/form-data">
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Campaign Name</span>
+                                                <input type="text" name="campaignName" class="form-control" placeholder="Enter campaign name" aria-label="Enter campaign name" aria-describedby="basic-addon1" required>
+                                            </div>
+
+                                            <div class="input-group mb-3" style="width: 100%;">
+                                                <span class="input-group-text">Campaign Info</span>
+                                                <textarea name="campaignInfo" class="form-control" aria-label="With textarea" required></textarea>
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Raise Goal</span>
+                                                <input type="number" name="raiseGoal" id="raiseGoal" oninput="checkPostCodeLength(this, 5)" class="form-control" placeholder="Enter raising goal (RM)" aria-label="Enter raising goal (RM)" aria-describedby="basic-addon1" required>
+                                            </div>
+                                            <p id="valueInvalid" style="color: red; display: none;"></p>
+
+                                            <label class="form-label">Upload a campaign banner</label>
+                                            <div class="input-group mb-3">
+                                                <input type="file" name="campaignBannerUpload" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" required>
+                                            </div>
+
+                                            <label for="date">Closing Date:</label>
+                                            <input type="date" id="closingDate" name="closingDate" required><br/><br/>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary btn-reg-signin" data-bs-dismiss="modal">Close</button>
+                                        <input class="btn btn-secondary btn-reg-signin" id="createCampaign" type="submit" value="Create" form="campaignForm">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <p>Active</p>
+
+
                         <p>Past</p>
                     </div>
 
@@ -144,6 +193,35 @@
             }
         ?>
     </body>
+
+    <script>
+        //prevent selecting past date
+        var today = new Date().toISOString().split('T')[0];
+        document.getElementById('closingDate').setAttribute('min', today);
+        
+        //check raise goal value to prevent too low or too high
+        const raiseValue = document.getElementById('raiseGoal');
+        const invalidValuePrompt = document.getElementById('valueInvalid');
+        const registerButton = document.getElementById('registerBtn');
+
+                raiseValue.addEventListener('input', validateRaiseValue);
+
+                function validateRaiseValue() {
+                    const valueGiven = parseInt(raiseValue.value); 
+                    if (valueGiven < 1000) {
+                        invalidValuePrompt.textContent = "Value too low";
+                        invalidValuePrompt.style.display = 'block';
+                        registerButton.setAttribute('disabled','true');
+                    } else if (valueGiven >100000){
+                        invalidValuePrompt.textContent = "Value too high";
+                        invalidValuePrompt.style.display = 'block';
+                        registerButton.setAttribute('disabled','true');
+                    }else{
+                        invalidValuePrompt.style.display = 'none';
+                        registerButton.removeAttribute('disabled');
+                    }
+                }
+    </script>
 </html>
 
 

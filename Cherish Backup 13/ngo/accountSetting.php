@@ -411,11 +411,15 @@
                     alertify.alert('Cannot update empty bio, write something!');
                 </script>";
             }
-            else{
+            else if($alertCondition == "anperr"){
                 echo"<script>
                     alertify.alert('Something went wrong while performing the action. Please try again.');
                 </script>";
             }
+            else{
+                echo"<script>
+                alertify.alert('Alert Title', 'Alert Message!', function(){ alertify.success('Ok'); });
+                </script>";            }
         ?>
     </body>
 </html>
