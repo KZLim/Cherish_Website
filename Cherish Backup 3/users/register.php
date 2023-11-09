@@ -168,8 +168,6 @@
                     postCodeField.value = filteredValue;
                 });
 
-
-
                 //this section below make sure that the emailPart field does not allow the '@' symbol, as the system later on has already provided.
                 const emailRestrict = document.getElementById('emailPart');
 
