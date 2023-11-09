@@ -71,7 +71,7 @@ if(
     $user->state = $stateReady;
     $user->postalCode = $postCodeReady;
 
-    //Call the function create to create an account. The function is define in the obj file.
+    //Call the function createAccount to create an account. The function is define in the obj file.
     if($user->createAccount()){
         //make a redirection here when successfully created the profile.
         header("Location: ../../users/profileSetup.php?uid=$user->uid&name=$usernameReady");
@@ -84,7 +84,7 @@ if(
     }
 }
   
-// user data incomplete 
+// data requested to create an account is incomplete 
 else{
 
 

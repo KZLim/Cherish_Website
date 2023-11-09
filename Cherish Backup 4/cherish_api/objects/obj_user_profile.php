@@ -63,5 +63,26 @@
             return false;
             
         }
+
+        function updateBio(){
+
+            $newBio = $this->bio;
+
+            $query2 = "UPDATE  user_profile SET bio=:bioData WHERE `uid`=:uidData;";
+
+            $stmt2 = $this->conn->prepare($query2);
+
+            $stmt2->bindParam(":uidData",$this->uid);
+            $stmt2->bindParam(":bioData",$newBio);
+           
+        
+            if($stmt2->execute()){
+                echo"bio changed";
+            }
+            else{
+                echo"bio not change";
+            }
+
+        }
     }
 ?>

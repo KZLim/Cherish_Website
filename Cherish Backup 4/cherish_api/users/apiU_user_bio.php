@@ -22,44 +22,33 @@ $user = new Users_profile($db);
 //this line of code is used for api testing through postman. Disabled when not in testing.
 //$data = json_decode(file_get_contents("php://input"));
 
-//check whether the profile images is empty 
-if(!empty($_FILES['profilePicUpload'])){
+//this if statement is a secondary check (a backend check, it check for any data empty or missing along the way)
+if(!empty($_POST['bio'])){
 
-    //the data passed using hidden and post method in the second step of the reigstration process. These data come from the first step.
-    $uidParamData = $_POST['uidparam'];
-    $nameParamData = $_POST['nameparam'];
-
-    //getting the images information   
-    $image_name = $_FILES['profilePicUpload']['name'];
-    $tmp_name = $_FILES['profilePicUpload']['tmp_name'];
-    $error = $_FILES['profilePicUpload']['error'];
-
+    //if none data are missing, the data will be sanitize
+    $bioGiven = htmlspecialchars(strip_tags($_POST['bio']));
+    
     // set the value to the object properties
-    $user->uid = $uidParamData;
-    $user->name = $nameParamData;
-    $user->bio = $_POST['bio'];
-    $user->profilePicName =$image_name;
-    $user->tmpPath = $tmp_name;
-    $user->errorCount = $error;
+    $user->uid = //session value
+    $user->bio = $bioGiven;
 
-    //Call the function create to setup an profile for the user. The function is define in the obj file.
-    //this is step 2 of the registration process
-    if($user->createProfile()){
-        //make a redirection here when successfully created the profile.
+    //Call the function updateBio to update user's bio. The function is define in the obj file.
+    if($user->updateBio()){
+        //make a redirection here when successfully updated the user's bio.
         header("Location:../../users/refisterProcess.php");
     }
     //unable to setup profile 
     else{
   
-       
+       echo"error";
       
     }
 }
   
-// profile data incomplete 
+// data requested to update user's bio incomplete
 else{
 
-
+    echo"data missing";
 
 }
 ?>

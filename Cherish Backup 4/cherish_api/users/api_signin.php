@@ -41,7 +41,7 @@ if(
     $user->password = $passwordGiven;    
     
 
-    //Call the function create to sign in. The function is define in the obj file.
+    //Call the function validateSignIn to sign in. The function is define in the obj file.
     if($user->validateSignIn()){
         //make a redirection here when successfully sign in
         header("Location:https://google.com");

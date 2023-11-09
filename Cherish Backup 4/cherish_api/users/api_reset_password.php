@@ -43,9 +43,9 @@ if(
     $user->password = $passwordGiven;    
     
 
-    //Call the function create to sign in. The function is define in the obj file.
+    //Call the function resetPassword to sign in. The function is define in the obj file.
     if($user->resetPassword()){
-        //make a redirection here when successfully sign in
+        //make a redirection here when successfully reset password
         header("Location:https://google.com");
 
     }
@@ -57,7 +57,7 @@ if(
     }
 }
   
-// sign in credential incomplete 
+// data requested to reset password incomplete.
 else{
 
     echo"data missing";

@@ -248,9 +248,6 @@
                     }
                 }
 
-
-
-
             </script>
             <div class="inner-container" style="background-color: cyan;" >
                 <h4 align="center">Together Make A Difference</h4>

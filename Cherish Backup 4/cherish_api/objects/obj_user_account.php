@@ -124,7 +124,7 @@
 
 
             $query3 = "SELECT ic_number FROM user_account WHERE email_address=:emailAddressData";
-            $query4 = "UPDATE  user_account SET `password`=:newPassword WHERE email_address=:emailAddressData;";
+            $query4 = "UPDATE  user_account SET `password`=:newPasswordData WHERE email_address=:emailAddressData;";
 
             // prepare query for execution
             $stmt3 = $this->conn->prepare($query3);
@@ -134,7 +134,7 @@
             //bind the value to be used in the query
             $stmt3->bindParam(":emailAddressData",$this->emailAddress); 
             $stmt4->bindParam(":emailAddressData",$this->emailAddress); 
-            $stmt4->bindParam(":newPassword",$newPassword); 
+            $stmt4->bindParam(":newPasswordData",$newPassword); 
 
             //execute the query
             $stmt3->execute();
@@ -158,6 +158,106 @@
                 echo"Record Not Found";
             }
         }
+
+        function updateEmail(){
+
+            $newEmail = $this->emailAddress;
+
+
+            $query5 = "SELECT password FROM user_account WHERE `uid`=:uidData";
+            $query6 = "UPDATE  user_account SET email_address=:emailAddressData WHERE `uid`=:uidData;";
+
+            $stmt5 = $this->conn->prepare($query5);
+            $stmt6 = $this->conn->prepare($query6);
+
+            $stmt5->bindParam(":uidData",$this->uid);
+            $stmt6->bindParam(":emailAddressData",$newEmail);
+            $stmt6->bindParam(":uidData",$this->uid);
+
+        
+            $stmt5->execute();
+
+            $row = $stmt5->fetch(PDO::FETCH_ASSOC);
+
+            if($row){
+                if(password_verify($this->password, $row['password'])){
+                    $stmt6->execute();
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+        }
+
+        function updatePhone(){
+
+            $newPhoneNum = $this->phoneNumber;
+
+
+            $query7 = "SELECT password FROM user_account WHERE `uid`=:uidData";
+            $query8 = "UPDATE  user_account SET phone_number=:phoneNumberData WHERE `uid`=:uidData;";
+
+            $stmt7 = $this->conn->prepare($query7);
+            $stmt8 = $this->conn->prepare($query8);
+
+            $stmt7->bindParam(":uidData",$this->uid);
+            $stmt8->bindParam(":phoneNumberData",$newPhoneNum);
+            $stmt8->bindParam(":uidData",$this->uid);
+
+        
+            $stmt7->execute();
+
+            $row = $stmt7->fetch(PDO::FETCH_ASSOC);
+
+            if($row){
+                if(password_verify($this->password, $row['password'])){
+                    $stmt8->execute();
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+        }
+
+        function updateReside(){
+
+            $newAddressLine = $this->addressLine;
+            $newCity = $this->city;
+            $newState = $this->state;
+            $newPostCode = $this->postalCode;
+
+            $query9 = "SELECT password FROM user_account WHERE `uid`=:uidData";
+            $query10 = "UPDATE  user_account SET address_line=:addressLineData, city=:cityData, `state`=:stateData, postal_code=:postCodeData WHERE `uid`=:uidData;";
+
+            $stmt9 = $this->conn->prepare($query9);
+            $stmt10 = $this->conn->prepare($query10);
+
+            $stmt9->bindParam(":uidData",$this->uid);
+            $stmt10->bindParam(":addressLineData",$newAddressLine);
+            $stmt10->bindParam(":cityData",$newCity);
+            $stmt10->bindParam(":stateData",$newState);
+            $stmt10->bindParam(":postCodeData",$newPostCode);
+            $stmt10->bindParam(":uidData",$this->uid);
+
+        
+            $stmt9->execute();
+
+            $row = $stmt9->fetch(PDO::FETCH_ASSOC);
+
+            if($row){
+                if(password_verify($this->password, $row['password'])){
+                    $stmt10->execute();
+                    echo"Address Changed";
+                }
+                else{
+                    echo"Address Not Changed";
+                    return false;
+                }
+            }
+        }
+
 
     }
 ?>
