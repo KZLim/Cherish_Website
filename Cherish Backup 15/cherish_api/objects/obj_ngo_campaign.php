@@ -78,5 +78,49 @@
             
 
         }
+
+        function updateCampaign(){
+
+            echo $this->campaignID;
+            echo $this->campaignInfo;
+            
+            if(!empty($this->campaignInfo)){
+                $query2 = "UPDATE ngo_campaign SET campaign_info=:campaignInfo WHERE campaign_id=:campaignID;";
+                $stmt2 = $this->conn->prepare($query2);
+                $stmt2->bindParam(":campaignInfo",$this->campaignInfo);
+                $stmt2->bindParam(":campaignID",$this->campaignID);
+
+                $stmt2->execute();
+            }
+            
+            if(!empty($this->campaignBanner)){
+                $query3 = "UPDATE ngo_campaign SET campaign_banner=:campaignBanner WHERE campaign_id=:campaignID;";
+                $stmt3 = $this->conn->prepare($query3);
+
+                $fileType=substr($this->campaignBanner, strpos($this->campaignBanner, ".")); //this step take the extension of the image file (png,jpg...)
+                $newImageName = $this->ouid.uniqid().$fileType;  //this generate the new name for the image, the formula: (userid+image unique
+                
+                if($this->campaignBanner_error == 0){     
+                    $img_upload_path = '../../campaign_banner/'.$newImageName;
+                    move_uploaded_file($this->campaignBanner_tmp,$img_upload_path);
+                }
+
+                $stmt3->bindParam(":campaignBanner",$newImageName);
+                $stmt3->bindParam(":campaignID",$this->campaignID);
+
+                $stmt3->execute();
+            }
+
+            if(!empty($this->closingDate)){
+                $query4 = "UPDATE ngo_campaign SET closing_date=:closingDate WHERE campaign_id=:campaignID;";
+                $stmt4 = $this->conn->prepare($query4);
+                $stmt4->bindParam(":closingDate",$this->closingDate);
+                $stmt4->bindParam(":campaignID",$this->campaignID);
+
+                $stmt4->execute();
+            }
+            
+            return true;
+        }
     }
 ?>
