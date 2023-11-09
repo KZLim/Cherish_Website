@@ -34,7 +34,7 @@ if(
     $campaignNameReady = htmlspecialchars(strip_tags($_POST['campaignName']));
     $campaignInfoReady = htmlspecialchars(strip_tags($_POST['campaignInfo']));
     $raiseGoalReady = htmlspecialchars(strip_tags($_POST['raiseGoal']));
-    $dateReady = $_POST['closingDate'];
+    $dateReady = $_POST['campaignClosingDate'];
 
     //getting the images information   
     $image_name = $_FILES['campaignBannerUpload']['name'];
