@@ -26,40 +26,38 @@ $ngo = new Ngo_account($db);
 if( 
     !empty($_POST['emailPart'])&&
     !empty($_POST['domainPart'])&&
-    !empty($_POST['phoneNumber'])&&
     !empty($_POST['password'])
+    
 ){
     //if none data are missing, the data will be sanitize
-    $emailPartReady = htmlspecialchars(strip_tags($_POST['emailPart']));
-    $domainPartReady = htmlspecialchars(strip_tags($_POST['domainPart']));
-    $phoneNumberReady = htmlspecialchars(strip_tags($_POST['phoneNumber']));
-    $passwordReady = htmlspecialchars(strip_tags($_POST['password']));
+    $emailPartGiven = htmlspecialchars(strip_tags($_POST['emailPart']));
+    $domainPartGiven = htmlspecialchars(strip_tags($_POST['domainPart']));
+    $passwordGiven = htmlspecialchars(strip_tags($_POST['password']));
 
-    $emailAddressReady = $emailPartReady."@".$domainPartReady;  //concat the email and domain field together
+    $emailAddressReady = $emailPartGiven."@".$domainPartGiven; //combining the email 
 
     // set the value to the object properties to be used 
-    $ngo->ouid = uniqid('crt');    //uniqid() will generate a random 13digit id using reference to the timestamp of the computer
     $ngo->email = $emailAddressReady;
-    $ngo->directContactNumber = $phoneNumberReady;
-    $ngo->password = $passwordReady;
+    $ngo->password = $passwordGiven;    
+    
 
-    //Call the function createAccount to create an account. The function is define in the obj file.
-    if($ngo->createAccount()){
-        //make a redirection here when successfully created the profile.
-        header("Location: ../../ngo/profileSetup.php?uid=$user->uid");
+    //Call the function validateSignIn to sign in. The function is define in the obj file.
+    if($ngo->validateSignIn()){
+        //make a redirection here when successfully sign in
+        header("Location:../../ngo/profile.php");
     }
-    //unable to create account
+    //unable to sign in
     else{
-        
-       echo"ngo error 1.";
+  
+       echo"Sign in credential incorrect, please try again.";
       
     }
 }
   
-// data requested to create an account is incomplete 
+// sign in credential incomplete 
 else{
 
-    echo"ngo error 2";
+    echo"Data Error. Unable to sign in at the moment.";
 
 }
 ?>

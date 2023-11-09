@@ -48,10 +48,11 @@
                 <h2>NGO Details</h2>
                 <p>This section will display all the ngo details.</p>
                 <?php
+                            session_start();
                             $dbc = mysqli_connect("localhost","root","");
                             mysqli_select_db($dbc,"cherish_db");
 
-                            $query = mysqli_query($dbc,"SELECT * FROM ngo_profile WHERE `ouid`= 'crt64f075fc86ee3'");
+                            $query = mysqli_query($dbc,"SELECT * FROM ngo_profile WHERE `ouid`= '".$_SESSION["identifier"]."'");
                                         
                             while ($row = $query->fetch_assoc()){
 

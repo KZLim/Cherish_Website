@@ -92,8 +92,8 @@
                     
                     <!--these data are pass from the first step of the registration process. Both thes data are need to setup the profile, this using
                     the post method of this form, pass on to the profile creation api, so that it can work on its process.-->
-                    <input type="hidden" name="uidparam" value="crt64f1c16ab4e0d">
-                    <input type="hidden" name="emailparam" value="test@example.com">
+                    <input type="hidden" name="ouidparam" value="<?php echo urldecode($_GET['ouid']); ?>">
+                    <input type="hidden" name="emailparam" value="<?php echo urldecode($_GET['email']); ?>">
 
                     <div class="d-flex justify-content-end">
                         <input class="btn btn-primary btn-reg-signin" id="setup" type="submit" value="Done">

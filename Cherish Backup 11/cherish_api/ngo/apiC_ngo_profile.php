@@ -26,7 +26,7 @@ $ngo = new Ngo_profile($db);
 if(true){
 
     //the data passed using hidden and post method in the second step of the reigstration process. These data come from the first step.
-    $uidParamData = $_POST['uidparam'];
+    $uidParamData = $_POST['ouidparam'];
     $emailParamData = $_POST['emailparam'];
 
     $ngoNameReady = htmlspecialchars(strip_tags($_POST['ngoName']));
@@ -70,30 +70,12 @@ if(true){
     $ngo->category = $categoryReady;
     $ngo->status = "listed";
 
-    /*echo"$emailParamData <br/>";
-    echo"$uidParamData <br/>";
-    echo"$ngoNameReady <br/>";
-    echo"$registrationNumberReady <br/>";
-    echo"$addressLineReady <br/>";
-    echo"$postCodeReady <br/>";
-    echo"$cityReady <br/>";
-    echo"$stateReady <br/>";
-    echo"$image_name <br/>";
-    echo"$tmp_name <br/>";
-    echo"$error <br/>";
-    echo"$banner_name <br/>";
-    echo"$banner_tmp <br/>";
-    echo"$banner_error <br/>";
-    echo"$bioReady <br/>";
-    echo"$urlReady <br/>";
-    echo"$categoryReady";*/
 
-    ///Call the function createProfile to setup profile for the user. The function is define in the obj file.
-    //this is step 2 of the registration process
+    ///Call the function createProfile to setup profile for the ngo. The function is define in the obj file.
+    //this is step 2 of the ngo registration process
     if($ngo->createProfile()){
         //make a redirection here when successfully created the profile.
-        //header("Location:../../ngo/signin.php");
-        header("Location:https://www.google.com");
+        header("Location:../../ngo/signin.php");
 
     }
     //unable to setup profile 

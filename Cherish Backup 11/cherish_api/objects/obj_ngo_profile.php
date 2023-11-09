@@ -45,9 +45,9 @@
             // prepare query
             $stmt = $this->conn->prepare($query);
 
-            //we rename the image name that the user give (for simpler file management)
+            //we rename the image name that the ngo give (for simpler file management)
             $fileType=substr($this->profilePath, strpos($this->profilePath, ".")); //this step take the extension of the image file (png,jpg...)
-            $newImageName = $this->ouid.uniqid().$fileType;  //this generate the new name for the image, the formula: (userid+image unique id+extension)
+            $newImageName = $this->ouid.uniqid().$fileType;  //this generate the new name for the image, the formula: (ouid+image unique id+extension)
             
             //we rename the banner name that the ngo give (for simpler file management)
             $bannerfileType=substr($this->bannerPath, strpos($this->bannerPath, ".")); 
@@ -97,8 +97,6 @@
             $stmt->bindParam(":category", $categoryData);
             $stmt->bindParam(":ngoStatus", $ngoStatusData);
 
-           
-            // execute query and finishing this query will store the reamining data needed for the profile into the database (incl the image new name)
             if($stmt->execute()){
                 return true;
             }
