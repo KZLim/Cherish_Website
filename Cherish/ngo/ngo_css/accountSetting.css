@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.container-custom{
+    background-color: white;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.col-height{
+    height: 685px;
+    max-height: 685px;
+    width: 390px;
+}
+
+.tab-nav-profile{
+    margin-top: 30px;
+}
+
+.btn-reg-signin{
+    background-color: #ff5757;
+    border-color: #ff5757;
+}
+
+.btn-reg-signin:hover {
+    background-color: #ff7878; 
+    border-color: #ff7878; 
+}
+
+.btn-reg-signin:disabled {
+    background-color: #ff7878; 
+    border-color: #ff7878; 
+}
+
+/* Custom CSS to change color of selected pills */
+.nav-pills .nav-link.active {
+    background-color: #ff7878 ; /* Change this to your desired color */
+    color: white; /* Adjust text color for better visibility */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
