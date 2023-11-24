@@ -15,6 +15,7 @@
     <body>
         <?php
             include '../main/header.php';
+            error_reporting(E_ERROR | E_PARSE);
             $dbc = mysqli_connect("localhost","root","");
             mysqli_select_db($dbc,"cherish_db");
 
