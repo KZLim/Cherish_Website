@@ -175,7 +175,7 @@
                         locationGroup_campaign["Kelantan"],locationGroup_campaign["Terengganu"],locationGroup_campaign["Pahang"], locationGroup_campaign["Kuala Lumpur"],
                         locationGroup_campaign["PutraJaya"],locationGroup_campaign["Selangor"],locationGroup_campaign["Negeri Sembilan"],locationGroup_campaign["Melaka"],
                         locationGroup_campaign["Johor"],locationGroup_campaign["Sarawak"],locationGroup_campaign["Sabah"],locationGroup_campaign["Labuan"]], // Values for each slice
-                backgroundColor: ['blue', 'pink', 'red', 'green', 'orange', 'purple', 'cyan', 'magenta', 'yellow', 'lightblue'], // Colors for each slice
+                        backgroundColor: ['blue', 'pink', 'red', 'green', 'orange', 'purple', 'cyan', 'magenta', 'yellow', 'lightblue', 'lightgreen', 'lightcoral', 'lightsalmon', 'lightseagreen', 'lightsteelblue', 'lightgoldenrodyellow']//colors for each slice            
             }]
         };
 

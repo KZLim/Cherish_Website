@@ -187,7 +187,7 @@
 
         emailRestrict.addEventListener('input', function(event) {
             const inputValue = event.target.value;
-            const emailCharRestrict = /[@]/g; // Only restrict the "@" symbol
+            const emailCharRestrict = /[\'"@;\s]/g; // Only restrict the "@" symbol
 
             if (emailCharRestrict.test(inputValue)) {
                 event.target.value = inputValue.replace(emailCharRestrict, '');
@@ -200,7 +200,7 @@
 
         domainRestrict.addEventListener('input', function(event) {
             const inputValue = event.target.value;
-            const domainCharRestrict = /[@]/g; // Only restrict the "@" symbol
+            const domainCharRestrict = /[\'"@;\s]/g; // Only restrict the "@" symbol
 
             if (domainCharRestrict.test(inputValue)) {
                 event.target.value = inputValue.replace(domainCharRestrict, '');
@@ -306,6 +306,17 @@
                 passwordPrompt.style.display = 'none';
             }
         }
+
+        const passwordRestrict = document.getElementById('password');
+
+        passwordRestrict.addEventListener('input', function(event) {
+            const inputValue = event.target.value;
+            const passwordCharRestrict = /[\'";\s]/g; // Only restrict the "@" symbol
+
+            if (passwordCharRestrict.test(inputValue)) {
+                event.target.value = inputValue.replace(passwordCharRestrict, '');
+            }
+        });
     </script>
 
     <?php   

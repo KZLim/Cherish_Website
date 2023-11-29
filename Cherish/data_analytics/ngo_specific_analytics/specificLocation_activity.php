@@ -175,8 +175,8 @@
                         locationGroupSpecific_activity["Kelantan"],locationGroupSpecific_activity["Terengganu"],locationGroupSpecific_activity["Pahang"], locationGroupSpecific_activity["Kuala Lumpur"],
                         locationGroupSpecific_activity["PutraJaya"],locationGroupSpecific_activity["Selangor"],locationGroupSpecific_activity["Negeri Sembilan"],locationGroupSpecific_activity["Melaka"],
                         locationGroupSpecific_activity["Johor"],locationGroupSpecific_activity["Sarawak"],locationGroupSpecific_activity["Sabah"],locationGroupSpecific_activity["Labuan"]], // Values for each slice
-                backgroundColor: ['blue', 'pink', 'red', 'green', 'orange', 'purple', 'cyan', 'magenta', 'yellow', 'lightblue'], // Colors for each slice
-            }]
+                        backgroundColor: ['blue', 'pink', 'red', 'green', 'orange', 'purple', 'cyan', 'magenta', 'yellow', 'lightblue', 'lightgreen', 'lightcoral', 'lightsalmon', 'lightseagreen', 'lightsteelblue', 'lightgoldenrodyellow']            
+                    }]
         };
 
         // Create a pie chart

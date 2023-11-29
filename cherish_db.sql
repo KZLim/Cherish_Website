@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2023 at 06:28 PM
+-- Generation Time: Nov 29, 2023 at 06:57 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -73,6 +73,70 @@ CREATE TABLE `donors_record` (
   `campaign_id` varchar(13) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `donors_record`
+--
+
+INSERT INTO `donors_record` (`rid`, `donor_name`, `donor_uid`, `amount`, `donation_date`, `donation_time`, `campaign_id`) VALUES
+(7, 'Joyce Lee', '6566169182e29', 200, '2023-11-29', '01:19:41pm', '65661d031b29c'),
+(8, 'Joyce Lee', '6566169182e29', 300, '2023-11-29', '01:21:30pm', '65661dc870187'),
+(9, 'Joyce Lee', '6566169182e29', 1211, '2023-11-29', '01:21:39pm', '656620753516d'),
+(10, 'Joyce Lee', '6566169182e29', 1300, '2023-11-29', '01:21:49pm', '65669fca9b2ef'),
+(11, 'Joyce Lee', '6566169182e29', 100, '2023-11-29', '01:21:58pm', '6566c8f34e2c1'),
+(12, 'Joyce Lee', '6566169182e29', 10, '2023-11-29', '01:22:06pm', '65661f906f940'),
+(13, 'Jessica Lee', '6566176069d8d', 1000, '2023-11-29', '01:25:07pm', '656621735f33d'),
+(14, 'Jessica Lee', '6566176069d8d', 150, '2023-11-29', '01:25:13pm', '65661dc870187'),
+(15, 'Jessica Lee', '6566176069d8d', 150, '2023-11-29', '01:25:32pm', '65661f906f940'),
+(16, 'Jessica Lee', '6566176069d8d', 500, '2023-11-29', '01:25:46pm', '65669dd8ddc28'),
+(17, 'Jessica Lee', '6566176069d8d', 100, '2023-11-29', '01:25:56pm', '6566a6b9c6833'),
+(18, 'Jessica Lee', '6566176069d8d', 50, '2023-11-29', '01:26:05pm', '6566c8f34e2c1'),
+(19, 'Jessica Lee', '6566176069d8d', 100, '2023-11-29', '01:26:47pm', '65661d031b29c'),
+(20, 'Jessica Lee', '6566176069d8d', 150, '2023-11-29', '01:26:53pm', '65661dc870187'),
+(21, 'Jessica Lee', '6566176069d8d', 300, '2023-11-29', '01:26:59pm', '65661ea719a12'),
+(22, 'Christine Tan', '656617f5e6073', 700, '2023-11-29', '01:28:08pm', '65661d031b29c'),
+(23, 'Christine Tan', '656617f5e6073', 50, '2023-11-29', '01:28:12pm', '65661dc870187'),
+(24, 'Christine Tan', '656617f5e6073', 500, '2023-11-29', '01:28:26pm', '65661f906f940'),
+(25, 'Christine Tan', '656617f5e6073', 50, '2023-11-29', '01:28:32pm', '656620753516d'),
+(26, 'Christine Tan', '656617f5e6073', 170, '2023-11-29', '01:28:41pm', '65669fca9b2ef'),
+(27, 'Christine Tan', '656617f5e6073', 130, '2023-11-29', '01:29:34pm', '6566a6b9c6833'),
+(28, 'Christine Tan', '656617f5e6073', 70, '2023-11-29', '01:30:08pm', '6566c848f2ccd'),
+(29, 'Beatrice Ooi', '6566185bdad62', 15, '2023-11-29', '01:31:23pm', '65661d031b29c'),
+(30, 'Beatrice Ooi', '6566185bdad62', 15, '2023-11-29', '01:31:28pm', '65661dc870187'),
+(31, 'Beatrice Ooi', '6566185bdad62', 11, '2023-11-29', '01:33:38pm', '656620753516d'),
+(32, 'Beatrice Ooi', '6566185bdad62', 1750, '2023-11-29', '01:33:47pm', '65669dd8ddc28'),
+(33, 'Beatrice Ooi', '6566185bdad62', 520, '2023-11-29', '01:33:57pm', '6566c7089b093'),
+(34, 'Beatrice Ooi', '6566185bdad62', 520, '2023-11-29', '01:34:07pm', '6566a9b67a868'),
+(35, 'Carly Lim', '6566191191504', 30, '2023-11-29', '01:34:58pm', '65661d031b29c'),
+(36, 'Carly Lim', '6566191191504', 5, '2023-11-29', '01:35:03pm', '65661dc870187'),
+(37, 'Carly Lim', '6566191191504', 40, '2023-11-29', '01:35:21pm', '65661f906f940'),
+(38, 'Carly Lim', '6566191191504', 400, '2023-11-29', '01:35:55pm', '65669fca9b2ef'),
+(39, 'Dwayne Ooi', '6566196bc8541', 50, '2023-11-29', '01:37:45pm', '65661d031b29c'),
+(40, 'Dwayne Ooi', '6566196bc8541', 15, '2023-11-29', '01:37:51pm', '65661dc870187'),
+(41, 'Dwayne Ooi', '6566196bc8541', 55, '2023-11-29', '01:38:14pm', '6566a4af791a7'),
+(42, 'Dwayne Ooi', '6566196bc8541', 35, '2023-11-29', '01:38:37pm', '65661f906f940'),
+(43, 'Brad Lee', '656619dc23e65', 556, '2023-11-29', '01:39:05pm', '65661dc870187'),
+(44, 'Brad Lee', '656619dc23e65', 73, '2023-11-29', '01:39:17pm', '65661d031b29c'),
+(45, 'Brad Lee', '656619dc23e65', 500, '2023-11-29', '01:39:23pm', '65661f906f940'),
+(46, 'Brad Lee', '656619dc23e65', 500, '2023-11-29', '01:39:30pm', '6566a6b9c6833'),
+(47, 'Brad Lee', '656619dc23e65', 500, '2023-11-29', '01:39:39pm', '6566c848f2ccd'),
+(48, 'Jennifer Log', '65661a497c941', 75, '2023-11-29', '01:42:27pm', '65661f906f940'),
+(49, 'Jennifer Log', '65661a497c941', 1451, '2023-11-29', '01:42:34pm', '6566a8b3c074c'),
+(50, 'Jennifer Log', '65661a497c941', 55, '2023-11-29', '01:42:41pm', '6566c7089b093'),
+(51, 'Jennifer Log', '65661a497c941', 75, '2023-11-29', '01:42:50pm', '6566c848f2ccd'),
+(52, 'Jennifer Log', '65661a497c941', 550, '2023-11-29', '01:42:58pm', '65669dd8ddc28'),
+(53, 'Jennifer Log', '65661a497c941', 150, '2023-11-29', '01:43:26pm', '6566a8b3c074c'),
+(54, 'Charlie Teoh', '65661aa55c4ab', 50, '2023-11-29', '01:46:11pm', '656620753516d'),
+(55, 'Charlie Teoh', '65661aa55c4ab', 300, '2023-11-29', '01:46:20pm', '6566a1e4348ed'),
+(56, 'Charlie Teoh', '65661aa55c4ab', 50, '2023-11-29', '01:46:24pm', '6566a1e4348ed'),
+(57, 'Charlie Teoh', '65661aa55c4ab', 1500, '2023-11-29', '01:46:35pm', '6566a33580352'),
+(58, 'Charlie Teoh', '65661aa55c4ab', 55, '2023-11-29', '01:46:46pm', '6566a6b9c6833'),
+(59, 'Charlie Teoh', '65661aa55c4ab', 55, '2023-11-29', '01:46:51pm', '65661f906f940'),
+(60, 'Charlie Teoh', '65661aa55c4ab', 540, '2023-11-29', '01:46:58pm', '6566c7089b093'),
+(61, 'Ed Tan', '65661ae984f2b', 70, '2023-11-29', '01:48:58pm', '65661f906f940'),
+(62, 'Ed Tan', '65661ae984f2b', 15, '2023-11-29', '01:49:09pm', '6566a6b9c6833'),
+(63, 'Leo Loh', '65661b43a4e7f', 150, '2023-11-29', '01:49:49pm', '6566a1e4348ed'),
+(64, 'Maia Ooi', '65661b9a75225', 75, '2023-11-29', '01:50:24pm', '6566c848f2ccd');
+
 -- --------------------------------------------------------
 
 --
@@ -139,12 +203,24 @@ CREATE TABLE `ngo_activity` (
 --
 
 INSERT INTO `ngo_activity` (`activity_name`, `activity_id`, `activity_info`, `address_line`, `postal_code`, `city`, `state`, `activity_date`, `closing_date`, `activity_time`, `participation_limit`, `current_participant`, `activity_status`, `activity_banner`, `ouid`) VALUES
-('Cleaning the dogs house', '65661d6ee119c', 'We need 5 volunteers to clean the dog house. The dogs in the shelter requires clean house to stay healthy, and currently we are short handed, 5 volunteers needed to help with the dog house cleaning', '15, Jalan Raja 1', '11160', 'Georgetown', 'Pulau Pinang', '2023-12-07', '2023-12-05', '9:00AM-2:00PM', 5, 0, 'new', 'crt6565fc1dd5c6b65661d6ee11ab.jpg', 'crt6565fc1dd5c6b'),
-('Play with the dogs', '65661e50125bc', 'We need 5 volunteers to play with the dogs. Lunch provided to the volunteers.', '42, Lorong Jalan Burma, Pulau Tikus', '10350', 'GeorgeTown', 'Pulau Pinang', '2023-12-05', '2023-12-03', '10:00AM-11:00AM', 5, 0, 'new', 'crt6565fd12e95c165661e50125cb.jpg', 'crt6565fd12e95c1'),
-('Daily essential distribtion', '65661eed1f6f9', 'Need 10 volunteers to distribute the newly bought daily essential to different location for the children in need.', '27 Jalan Tikus, Pulau Tikus', '10150', 'Georgetown', 'Pulau Pinang', '2023-12-05', '2023-12-03', '1:00PM-3:00PM', 10, 0, 'new', 'crt6565fe429180665661eed1f705.jpg', 'crt6565fe4291806'),
-('The Essential Distribution ', '6566200ee405c', '25 Volunteers is needed to help distribute the essentials to our list of children in need of help. The activity will cover for the volunteers meals.', '45, Lorong Kelawai', '10250', 'Georgetown', 'Pulau Pinang', '2023-12-15', '2023-12-10', '1:00PM-5:00PM', 25, 0, 'new', 'crt6565ff3d4d1c56566200ee406c.jpg', 'crt6565ff3d4d1c5'),
-('Teachers Needed.', '656620dd8bbe4', 'We need teacher to help teach our classes that is provided to the children in need. The volunters will be provided with the necessary materials needed for the class.', '88, Jalan Pangkor 1', '11200', 'Tanjung Bungah', 'Pulau Pinang', '2023-12-05', '2023-12-03', '1:00PM-3:00PM', 5, 0, 'new', 'crt656600681f0b6656620dd8bbf3.png', 'crt656600681f0b6'),
-('Distribute supplies to the student.', '656621c9d345b', 'We need 5 volunteers to help distribute the school supplies bought to our list of student.', '55, Lebuh Acheh 1', '11020', 'Georgetown', 'Pulau Pinang', '2023-12-07', '2023-12-05', '1:00PM-2:00PM', 5, 0, 'new', 'crt6566013e6dd8d6566220b6a9ee.jpg', 'crt6566013e6dd8d');
+('Cleaning the dogs house', '65661d6ee119c', 'We need 5 volunteers to clean the dog house. The dogs in the shelter requires clean house to stay healthy, and currently we are short handed, 5 volunteers needed to help with the dog house cleaning', '15, Jalan Raja 1', '11160', 'Georgetown', 'Pulau Pinang', '2023-12-07', '2023-12-05', '9:00AM-2:00PM', 5, 5, 'new', 'crt6565fc1dd5c6b65661d6ee11ab.jpg', 'crt6565fc1dd5c6b'),
+('Play with the dogs', '65661e50125bc', 'We need 5 volunteers to play with the dogs. Lunch provided to the volunteers.', '42, Lorong Jalan Burma, Pulau Tikus', '10350', 'GeorgeTown', 'Pulau Pinang', '2023-12-05', '2023-12-03', '10:00AM-11:00AM', 5, 5, 'new', 'crt6565fd12e95c165661e50125cb.jpg', 'crt6565fd12e95c1'),
+('Daily essential distribtion', '65661eed1f6f9', 'Need 10 volunteers to distribute the newly bought daily essential to different location for the children in need.', '27 Jalan Tikus, Pulau Tikus', '10150', 'Georgetown', 'Pulau Pinang', '2023-12-05', '2023-12-03', '1:00PM-3:00PM', 10, 5, 'new', 'crt6565fe429180665661eed1f705.jpg', 'crt6565fe4291806'),
+('The Essential Distribution ', '6566200ee405c', '25 Volunteers is needed to help distribute the essentials to our list of children in need of help. The activity will cover for the volunteers meals.', '45, Lorong Kelawai', '10250', 'Georgetown', 'Pulau Pinang', '2023-12-15', '2023-12-10', '1:00PM-5:00PM', 25, 7, 'new', 'crt6565ff3d4d1c56566200ee406c.jpg', 'crt6565ff3d4d1c5'),
+('Teachers Needed.', '656620dd8bbe4', 'We need teacher to help teach our classes that is provided to the children in need. The volunters will be provided with the necessary materials needed for the class.', '88, Jalan Pangkor 1', '11200', 'Tanjung Bungah', 'Pulau Pinang', '2023-12-05', '2023-12-03', '1:00PM-3:00PM', 5, 4, 'new', 'crt656600681f0b6656620dd8bbf3.png', 'crt656600681f0b6'),
+('Distribute supplies to the student.', '656621c9d345b', 'We need 5 volunteers to help distribute the school supplies bought to our list of student.', '55, Lebuh Acheh 1', '11020', 'Georgetown', 'Pulau Pinang', '2023-12-07', '2023-12-05', '1:00PM-2:00PM', 5, 0, 'new', 'crt6566013e6dd8d6566220b6a9ee.jpg', 'crt6566013e6dd8d'),
+('Health Heroes Volunteer Drive', '65669ea1bc5d0', 'Welcome to the Health Heroes Volunteer Drive! We believe that everyone has the power to make a positive impact on the health of their community. Join us in a volunteer initiative aimed at promoting health and well-being through active community engagement.', '36A, Lebuh Muntri 15', '15102', 'Georgetown', 'Pulau Pinang', '2023-12-25', '2023-12-20', '7:00AM-11:00AM', 20, 5, 'new', 'crt6566026de97fd65669ea1bc5dd.jpg', 'crt6566026de97fd'),
+('Wellness Warriors Community Outreach', '6566a05aa6d11', 'Greetings to all Wellness Warriors! In the spirit of community well-being, we&#039;re launching the Wellness Warriors Community Outreach campaign. Join us in a collective effort to promote health, provide support, and build a healthier community for everyone.', '45A, Jalan Ampang 11', '50450', 'Kuala Lumpur', 'Kuala Lumpur', '2024-01-06', '2024-01-05', '7:00AM-11:00AM', 25, 0, 'updated', 'crt65660319ae5886566a05aa6d33.jpg', 'crt65660319ae588'),
+('Share the Harvest - Food Bank Volunteer Drive', '6566a25d21a42', 'Welcome to Share the Harvest - Food Bank Volunteer Drive! The fight against hunger requires more than just donations; it requires hands-on support. Join us in this impactful volunteer initiative to actively contribute to our local food bank and help ensure that no one in our community goes without a meal.', '27A, Jalan Bukit Bintang', '55100', 'Kuala Lumpur', 'Kuala Lumpur', '2023-12-24', '2023-12-20', '9:00AM-11:00AM', 15, 3, 'new', 'crt6566044669f766566a25d21a51.jpeg', 'crt6566044669f76'),
+('Food Bank Volunteer Drive', '6566a41da70f5', 'Welcome to Food Bank Volunteer Drive! The fight against hunger requires more than just donations; it requires compassionate hands and dedicated hearts. Join us in this impactful volunteer initiative to actively contribute to our local food bank and help ensure that no neighbor goes without a meal.', '15 Jalan SS 7/19, Kelana Jaya', '47301', 'Petaling Jaya', 'Selangor', '2023-12-24', '2023-12-20', '7:00AM-10:00AM', 10, 2, 'new', 'crt656604f25e6c56566a41da710b.jpg', 'crt656604f25e6c5'),
+('Hearts &amp; Hands - Seniors Care Volunteer Drive', '6566a53bf1acb', 'Welcome to Hearts &amp; Hands - Seniors Care Volunteer Drive! Our seniors deserve our love and attention, and your hands can make a significant difference in their lives. Join us in this meaningful volunteer initiative to actively contribute to seniors care programs, bringing joy and companionship to our beloved elders.', '41A, Jalan SS 15/4, Subang Jaya', '47500', 'Petaling Jaya', 'Selangor', '2023-12-10', '2023-12-09', '1:00PM-4:00PM', 7, 6, 'new', 'crt6566060f1c77c6566a53bf1ad9.jpg', 'crt6566060f1c77c'),
+('Radiant Hearts - Seniors Care Volunteer Drive', '6566a720055d2', 'Welcome to Radiant Hearts - Seniors Care Volunteer Drive! Our beloved seniors deserve to age with dignity and joy. Join us in this heartwarming volunteer initiative to actively contribute to seniors care programs, bringing companionship and support to brighten the lives of our elderly community members.', '19 Jalan SS 2/10, Taman Universiti,43000', '43000', 'Kajang', 'Selangor', '2023-12-15', '2023-12-12', '1:30PM-4:30PM', 5, 2, 'new', 'crt65660723211126566a720055e3.jpg', 'crt6566072321112'),
+('Mindful Hearts - Mental Health Volunteer Drive', '6566a92fbcd51', 'Welcome to Mindful Hearts - Mental Health Volunteer Drive! Mental health is a crucial aspect of well-being, and your compassion and dedication can make a significant difference. Join us in this meaningful volunteer initiative to actively contribute to mental health programs, providing support and resources to those facing mental health challenges.', '45A, Jalan Ibrahim', '80000', 'Johor Bahru', 'Johor', '2023-12-10', '2023-12-09', '2:00PM-3:00PM', 10, 6, 'new', 'crt65660808ae4be6566a92fbcd65.jpg', 'crt65660808ae4be'),
+(' Hearts in Harmony - Mental Health Volunteer Drive', '6566aa05ac9ba', 'Welcome to Hearts in Harmony - Mental Health Volunteer Drive! Mental health is a journey we walk together, and your time and compassion can make a meaningful impact. Join us in this heartfelt volunteer initiative to actively contribute to mental health programs, providing support and fostering a sense of community for those navigating mental health challenges.', '33 Jalan Meldrum', '80000', 'Johor Bahru', 'Johor', '2023-12-07', '2023-12-05', '2:30PM-5:30PM', 10, 6, 'new', 'crt656609bd836b36566aa05ac9c9.jpg', 'crt656609bd836b3'),
+('Green Warriors - Environmental Care Volunteer Drive', '6566c76633301', 'Welcome to Green Warriors - Environmental Care Volunteer Drive! Our planet needs caring hands, and your time and dedication can contribute to its preservation. Join us in this impactful volunteer initiative to actively participate in environmental care projects, supporting initiatives that nurture and protect our Earth.', '15A, Jalan Tanjung Puteri', '80300', 'Johor Bahru', 'Johor', '2023-12-16', '2023-12-15', '8:00AM-10:30AM', 50, 1, 'new', 'crt65660b069a87e6566c76633311.webp', 'crt65660b069a87e'),
+(' Eco Champions - Environmental Care Volunteer Drive', '6566c805024e8', 'Welcome to Eco Champions - Environmental Care Volunteer Drive! Our planet needs dedicated hands, and your time and effort can contribute to its preservation. Join us in this impactful volunteer initiative to actively participate in environmental care projects, supporting initiatives that nurture and protect our Earth.', '12A, Jalan Sultan Azlan Shah', '31400', 'Ipoh', 'Perak', '2023-12-09', '2023-12-08', '7:00AM-10:00AM', 50, 1, 'new', 'crt65660de3cf50b6566c805024fa.jfif', 'crt65660de3cf50b'),
+('Eco Champions - Environmental Care Volunteer Drive', '6566c89abcc30', 'Welcome to Eco Champions - Environmental Care Volunteer Drive! Our planet needs dedicated hands, and your time and effort can contribute to its preservation. Join us in this impactful volunteer initiative to actively participate in environmental care projects, supporting initiatives that nurture and protect our Earth.', '78A, Jalan Raja Ekram', '30450', 'Ipoh', 'Perak', '2023-12-15', '2023-12-14', '1:00PM-3:00PM', 10, 5, 'new', 'crt65660f4d647516566c89abcc3b.jpg', 'crt65660f4d64751'),
+('Embrace Diversity - Differently Abled Volunteer Drive', '6566c95e25e02', 'Welcome to Embrace Diversity - Differently Abled Volunteer Drive! Every individual, regardless of ability, brings unique strengths to our community. Join us in this heartwarming volunteer initiative to actively support differently abled individuals, fostering inclusivity, and creating a more accessible and welcoming environment.', '42A, Jalan Tun Abdul Razak', '80000', 'Johor Bahru', 'Johor', '2023-12-09', '2023-12-08', '1:30PM-3:30PM', 15, 3, 'new', 'crt65660fe543b9a6566c95e25e10.jpg', 'crt65660fe543b9a');
 
 -- --------------------------------------------------------
 
@@ -169,12 +245,24 @@ CREATE TABLE `ngo_campaign` (
 --
 
 INSERT INTO `ngo_campaign` (`campaign_name`, `campaign_id`, `campaign_info`, `raise_goal`, `progress`, `closing_date`, `ouid`, `campaign_status`, `campaign_banner`) VALUES
-('Foods for The Shelter', '65661d031b29c', 'Funds needed to buy foods for the animal in the shelter. 50 bags of animal foods are needed.', 3000, 0, '2023-12-05', 'crt6565fc1dd5c6b', 'new', 'crt6565fc1dd5c6b65661d031b2aa.jpg'),
-('Dogs Vaccination Funds', '65661dc870187', 'We currently needs fund to help vaccinate the newly comers.', 1000, 0, '2023-12-10', 'crt6565fd12e95c1', 'new', 'crt6565fd12e95c165661dc870190.jpg'),
-('New cloths and daily essential', '65661ea719a12', 'Raising funds to buy new cloths and daily essentials for the children in need.', 5000, 0, '2023-12-10', 'crt6565fe4291806', 'new', 'crt6565fe429180665661ea719a1f.jpg'),
-('A Hope Passed On', '65661f906f940', 'Raising fund to support the cause of providing daily necessity to the children in need. Food, toiletry, sanitary product and cloths.', 10000, 0, '2023-12-05', 'crt6565ff3d4d1c5', 'new', 'crt6565ff3d4d1c565661f906f94c.jpg'),
-('Passing the knowledge torch', '656620753516d', 'Fund to help us continue running our teaching classes for the children in need.', 5000, 0, '2023-12-10', 'crt656600681f0b6', 'new', 'crt656600681f0b6656620753517c.png'),
-('School Start Necessity', '656621735f33d', 'Funds to buy school supply for those student in need.', 3000, 0, '2023-12-05', 'crt6566013e6dd8d', 'new', 'crt6566013e6dd8d656621ff5a10e.jpg');
+('Foods for The Shelter', '65661d031b29c', 'Funds needed to buy foods for the animal in the shelter. 50 bags of animal foods are needed.', 3000, 1168, '2023-12-05', 'crt6565fc1dd5c6b', 'new', 'crt6565fc1dd5c6b65661d031b2aa.jpg'),
+('Dogs Vaccination Funds', '65661dc870187', 'We currently needs fund to help vaccinate the newly comers.', 1000, 1241, '2023-12-10', 'crt6565fd12e95c1', 'new', 'crt6565fd12e95c165661dc870190.jpg'),
+('New cloths and daily essential', '65661ea719a12', 'Raising funds to buy new cloths and daily essentials for the children in need.', 5000, 300, '2023-12-10', 'crt6565fe4291806', 'new', 'crt6565fe429180665661ea719a1f.jpg'),
+('A Hope Passed On', '65661f906f940', 'Raising fund to support the cause of providing daily necessity to the children in need. Food, toiletry, sanitary product and cloths.', 10000, 1435, '2023-12-05', 'crt6565ff3d4d1c5', 'new', 'crt6565ff3d4d1c565661f906f94c.jpg'),
+('Passing the knowledge torch', '656620753516d', 'Fund to help us continue running our teaching classes for the children in need.', 5000, 1322, '2023-12-10', 'crt656600681f0b6', 'new', 'crt656600681f0b6656620753517c.png'),
+('School Start Necessity', '656621735f33d', 'Funds to buy school supply for those student in need.', 3000, 1000, '2023-12-05', 'crt6566013e6dd8d', 'new', 'crt6566013e6dd8d656621ff5a10e.jpg'),
+('Healing Hands Initiative', '65669dd8ddc28', 'Welcome to the Healing Hands Initiative! Our mission is to bring quality healthcare to underserved communities. In many regions, access to basic medical services is limited, leaving families vulnerable to preventable illnesses. Join us as we strive to make a lasting impact on the health and well-being of those in need.', 25000, 2800, '2023-12-20', 'crt6566026de97fd', 'new', 'crt6566026de97fd65669dd8ddc33.jpg'),
+('CareConnect Volunteer Initiative', '65669fca9b2ef', 'Welcome to the CareConnect Volunteer Initiative! We believe that healthcare is a shared responsibility, and by volunteering our time and skills, we can make a positive impact on the well-being of our community. Join us in this rewarding journey of service and compassion.', 50000, 1870, '2023-12-31', 'crt65660319ae588', 'new', 'crt65660319ae58865669fca9b2fa.jpg'),
+('Nourish Every Plate - Food Bank Fundraising Drive', '6566a1e4348ed', 'Welcome to Nourish Every Plate - Food Bank Fundraising Drive! Hunger should have no place in our community, and with your help, we can make sure no plate is left unfilled. Join us in this crucial campaign to support our local food bank and provide nourishment to those who need it most.', 5000, 500, '2023-12-20', 'crt6566044669f76', 'new', 'crt6566044669f766566a1e4348f7.jpeg'),
+('Feed Hope - Food Bank Assistance Fund', '6566a33580352', 'Welcome to Feed Hope - Food Bank Assistance Fund! Hunger is a pressing issue in our community, and with your support, we can make a significant impact. Join us in this crucial campaign to raise funds for our local food bank and ensure that no one goes without a meal.', 10000, 1500, '2023-12-20', 'crt656604f25e6c5', 'new', 'crt656604f25e6c56566a3358035e.jpg'),
+('Caring Hearts - Seniors Care Support Fund', '6566a4af791a7', 'Welcome to Caring Hearts - Seniors Care Support Fund! Our seniors are the pillars of our community, and it&#039;s our responsibility to ensure they receive the care and support they deserve. Join us in this crucial campaign to raise funds for seniors care programs, providing comfort and assistance to our beloved elders.', 10000, 55, '2023-12-05', 'crt6566060f1c77c', 'new', 'crt6566060f1c77c6566a4af791b7.jpg'),
+('Hearts Aglow - Seniors Care Support Fund', '6566a6b9c6833', 'Welcome to Hearts Aglow - Seniors Care Support Fund! Our cherished seniors deserve a life filled with comfort, joy, and companionship. Join us in this compassionate campaign to raise funds for seniors care programs, ensuring our elderly community members receive the support they need for a vibrant and fulfilling life.', 7000, 800, '2023-12-05', 'crt6566072321112', 'new', 'crt65660723211126566a6b9c6840.jpg'),
+('Minds Matter - Mental Health Support Fund', '6566a8b3c074c', 'Welcome to Minds Matter - Mental Health Support Fund! Mental health is a vital aspect of well-being, and we believe that everyone deserves access to the support they need. Join us in this essential campaign to raise funds for mental health programs, providing assistance and resources to those facing mental health challenges.', 5000, 1601, '2023-12-05', 'crt65660808ae4be', 'new', 'crt65660808ae4be6566a8b3c0759.jpg'),
+('Minds Unleashed - Mental Health Support Fund', '6566a9b67a868', 'Welcome to Minds Unleashed - Mental Health Support Fund! Mental health is a cornerstone of well-being, and together, we can make a significant impact. Join us in this crucial campaign to raise funds for mental health programs, providing vital resources and support to those navigating mental health challenges.', 1500, 520, '2023-12-05', 'crt656609bd836b3', 'new', 'crt656609bd836b36566a9b67a873.jpg'),
+('Earth Guardians - Environmental Care Fund', '6566c7089b093', 'Welcome to Earth Guardians - Environmental Care Fund! Our planet needs our protection, and together, we can make a positive impact. Join us in this vital campaign to raise funds for environmental care initiatives, supporting projects that preserve and restore our precious Earth.', 1000, 1115, '2023-12-05', 'crt65660b069a87e', 'new', 'crt65660b069a87e6566c7089b0a1.webp'),
+('Earth Harmony - Environmental Care Support Fund', '6566c7ad7dddb', 'Welcome to Earth Harmony - Environmental Care Support Fund! Our planet is our responsibility, and together, we can make a positive impact. Join us in this vital campaign to raise funds for environmental care initiatives, supporting projects that preserve and restore the health of our Earth.', 1500, 0, '2023-12-05', 'crt65660de3cf50b', 'new', 'crt65660de3cf50b6566c7ad7dded.jfif'),
+('Abilities Beyond Limits - Differently Abled Support Fund', '6566c848f2ccd', 'Welcome to Abilities Beyond Limits - Differently Abled Support Fund! Every person, regardless of ability, deserves a chance to thrive. Join us in this compassionate campaign to raise funds for differently abled individuals, supporting projects that enhance accessibility, provide assistive devices, and promote inclusivity.', 5000, 720, '2023-12-20', 'crt65660f4d64751', 'new', 'crt65660f4d647516566c848f2cd8.jpg'),
+('Beyond Barriers - Differently Abled Support Fund', '6566c8f34e2c1', 'Welcome to Beyond Barriers - Differently Abled Support Fund! Every individual, regardless of ability, deserves a chance to thrive. Join us in this compassionate campaign to raise funds for differently abled individuals, supporting projects that enhance accessibility, provide assistive devices, and promote inclusivity.', 1000, 150, '2023-12-05', 'crt65660fe543b9a', 'new', 'crt65660fe543b9a6566c8f34e2cd.jpg');
 
 -- --------------------------------------------------------
 
@@ -212,7 +300,7 @@ INSERT INTO `ngo_profile` (`ngo_email`, `ouid`, `ngo_name`, `register_number`, `
 ('educatedfuture@futurevision.org', 'crt656600681f0b6', 'The Future Vision', '551-339-74N', '0165521147', '88 Jalan Pangkor 1', 'Tanjung Bungah', 'Pulau Pinang', 11200, 'crt656600681f0b6656600fa5d26a.jpg', 'crt656600681f0b6656600fa5d26f.png', 'The Future Vision is a dedicated non-profit organization committed to providing comprehensive support for education. Our mission is rooted in the belief that education is the key to unlocking individual potential and building thriving communities. We are driven by a passion for ensuring that every child, regardless of background, has access to quality education and the resources needed to succeed.', 'www.educatedfuture.futurevision.org', 'Education Support', 'listed'),
 ('booksproject@booktoall.org', 'crt6566013e6dd8d', 'The Books Project', '784-551-13B', '0124458713', '55 Lebuh Acheh 1', 'Georgetown', 'Pulau Pinang', 10200, 'crt6566013e6dd8d656602340822a.jpg', 'crt6566013e6dd8d656621f5cd42f.jpg', 'The Books Project is a dynamic non-governmental organization (NGO) dedicated to providing unwavering support for education. Our commitment is rooted in the belief that education is a fundamental right that can transform lives and communities. We strive to create an inclusive and equitable educational landscape where every individual has the opportunity to thrive and reach their full potential.', 'booksproject.booktoall.org', 'Education Support', 'listed'),
 ('healthcareforall@greaterpurpose.org', 'crt6566026de97fd', 'A Greater Purpose', '543-111-AB1', '0123347716', '36A, Lebuh Muntri 15', 'Georgetown', 'Pulau Pinang', 10200, 'crt6566026de97fd656602ea0b8e4.jpg', 'crt6566026de97fd656602ea0b8e8.jpg', 'Navigating Toward Health Equity - Fostering Well-being for All.', 'www.health4all.greaterpurpose.org', 'Healthcare', 'listed'),
-('thrivelife@thrivinglife.com', 'crt65660319ae588', 'The Thriving Life', '151-333-N1A', '0175521493', '45A, Jalan Ampang 11', 'Kuala Lumpur Ci', 'Kuala Lumpur', 50450, 'crt65660319ae5886566040b38c19.jpg', 'crt65660319ae5886566040b38c1d.jpg', 'Empowering Lives through Health and Harmony - Building a Resilient Future for All.', 'www.thriveinhealth.thrivinglife.com', 'Healthcare', 'listed'),
+('thrivelife@thrivinglife.com', 'crt65660319ae588', 'The Thriving Life', '151-333-N1A', '0175521493', '45A, Jalan Ampang 11', 'Kuala Lumpur ', 'Kuala Lumpur', 50450, 'crt65660319ae5886566040b38c19.jpg', 'crt65660319ae5886566040b38c1d.jpg', 'Empowering Lives through Health and Harmony - Building a Resilient Future for All.', 'www.thriveinhealth.thrivinglife.com', 'Healthcare', 'listed'),
 ('fww@foodwatch.org', 'crt6566044669f76', 'Food and Water Watch', '111-131-47BD', '0128873641', '27A, Jalan Bukit Bintang', 'Kuala Lumpur', 'Kuala Lumpur', 55100, 'crt6566044669f76656604ad81bb9.jpeg', 'crt6566044669f76656604ad81bbe.webp', 'Fighting Hunger, Nourishing Hope - A Community United Against Food Insecurity', 'www.nomorehunger.foodwatch.org', 'Food Bank', 'listed'),
 ('foodneeds@foodnecessity.org', 'crt656604f25e6c5', 'Food Necessity', 'A12-554-739', '0123347891', '15 Jalan SS 7/19, Kelana Jaya', 'Petaling Jaya,', 'Selangor', 47301, 'crt656604f25e6c5656605bfc3423.png', 'crt656604f25e6c5656605bfc3427.jpg', 'Feeding Hope, Nourishing Lives - Bridging Communities Through Sustainable Food Solutions', 'www.foodneeds.foodnecessity.org', 'Food Bank', 'listed'),
 ('ecct@extracaretrust.org', 'crt6566060f1c77c', 'Extra Care Charitable Trust', '453-151-NB5', '0175541973', '41A, Jalan SS 15/4, Subang Jaya', 'Petaling Jaya', 'Selangor', 47500, 'crt6566060f1c77c6566067eda5ef.jpg', 'crt6566060f1c77c6566067eda5f3.jpg', 'Dignifying Lives, Enriching Journeys - Fostering Holistic Senior Care with Compassion', 'www.ecct.extracaretrust.org', 'Seniors Welfare', 'listed'),
@@ -238,6 +326,78 @@ CREATE TABLE `participants_record` (
   `register_time` varchar(10) NOT NULL,
   `activity_id` varchar(13) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `participants_record`
+--
+
+INSERT INTO `participants_record` (`rid`, `participant_name`, `participant_uid`, `register_date`, `register_time`, `activity_id`) VALUES
+(6, 'Joyce Lee', '6566169182e29', '2023-11-29', '01:20:10pm', '65661d6ee119c'),
+(7, 'Joyce Lee', '6566169182e29', '2023-11-29', '01:20:15pm', '65661eed1f6f9'),
+(8, 'Joyce Lee', '6566169182e29', '2023-11-29', '01:20:28pm', '6566a53bf1acb'),
+(9, 'Joyce Lee', '6566169182e29', '2023-11-29', '01:20:39pm', '65669ea1bc5d0'),
+(10, 'Joyce Lee', '6566169182e29', '2023-11-29', '01:21:12pm', '6566a92fbcd51'),
+(11, 'Joyce Lee', '6566169182e29', '2023-11-29', '01:21:22pm', '6566c89abcc30'),
+(12, 'Joyce Lee', '6566169182e29', '2023-11-29', '01:22:11pm', '6566200ee405c'),
+(13, 'Jessica Lee', '6566176069d8d', '2023-11-29', '01:26:08pm', '65661d6ee119c'),
+(14, 'Jessica Lee', '6566176069d8d', '2023-11-29', '01:26:13pm', '6566200ee405c'),
+(15, 'Jessica Lee', '6566176069d8d', '2023-11-29', '01:26:21pm', '65669ea1bc5d0'),
+(16, 'Jessica Lee', '6566176069d8d', '2023-11-29', '01:26:28pm', '6566aa05ac9ba'),
+(17, 'Jessica Lee', '6566176069d8d', '2023-11-29', '01:26:39pm', '6566c89abcc30'),
+(18, 'Jessica Lee', '6566176069d8d', '2023-11-29', '01:27:05pm', '65661e50125bc'),
+(19, 'Christine Tan', '656617f5e6073', '2023-11-29', '01:28:17pm', '65661e50125bc'),
+(20, 'Christine Tan', '656617f5e6073', '2023-11-29', '01:28:20pm', '65661d6ee119c'),
+(21, 'Christine Tan', '656617f5e6073', '2023-11-29', '01:30:17pm', '6566c95e25e02'),
+(22, 'Beatrice Ooi', '6566185bdad62', '2023-11-29', '01:31:34pm', '65661d6ee119c'),
+(23, 'Beatrice Ooi', '6566185bdad62', '2023-11-29', '01:31:38pm', '65661e50125bc'),
+(24, 'Beatrice Ooi', '6566185bdad62', '2023-11-29', '01:31:42pm', '6566200ee405c'),
+(25, 'Beatrice Ooi', '6566185bdad62', '2023-11-29', '01:31:49pm', '656620dd8bbe4'),
+(26, 'Beatrice Ooi', '6566185bdad62', '2023-11-29', '01:31:54pm', '65669ea1bc5d0'),
+(27, 'Beatrice Ooi', '6566185bdad62', '2023-11-29', '01:32:01pm', '6566a92fbcd51'),
+(28, 'Beatrice Ooi', '6566185bdad62', '2023-11-29', '01:32:08pm', '6566c89abcc30'),
+(29, 'Beatrice Ooi', '6566185bdad62', '2023-11-29', '01:32:14pm', '6566c95e25e02'),
+(30, 'Beatrice Ooi', '6566185bdad62', '2023-11-29', '01:32:20pm', '6566a25d21a42'),
+(31, 'Beatrice Ooi', '6566185bdad62', '2023-11-29', '01:33:10pm', '6566a41da70f5'),
+(32, 'Carly Lim', '6566191191504', '2023-11-29', '01:36:01pm', '6566200ee405c'),
+(33, 'Carly Lim', '6566191191504', '2023-11-29', '01:36:05pm', '65661d6ee119c'),
+(34, 'Carly Lim', '6566191191504', '2023-11-29', '01:36:09pm', '65661e50125bc'),
+(35, 'Carly Lim', '6566191191504', '2023-11-29', '01:36:13pm', '656620dd8bbe4'),
+(36, 'Carly Lim', '6566191191504', '2023-11-29', '01:36:18pm', '6566a720055d2'),
+(37, 'Carly Lim', '6566191191504', '2023-11-29', '01:36:23pm', '6566a92fbcd51'),
+(38, 'Carly Lim', '6566191191504', '2023-11-29', '01:37:05pm', '65661eed1f6f9'),
+(39, 'Carly Lim', '6566191191504', '2023-11-29', '01:37:10pm', '6566aa05ac9ba'),
+(40, 'Carly Lim', '6566191191504', '2023-11-29', '01:37:18pm', '6566c89abcc30'),
+(41, 'Dwayne Ooi', '6566196bc8541', '2023-11-29', '01:38:00pm', '65661e50125bc'),
+(42, 'Dwayne Ooi', '6566196bc8541', '2023-11-29', '01:38:05pm', '6566a25d21a42'),
+(43, 'Dwayne Ooi', '6566196bc8541', '2023-11-29', '01:38:20pm', '6566a53bf1acb'),
+(44, 'Dwayne Ooi', '6566196bc8541', '2023-11-29', '01:38:23pm', '65661eed1f6f9'),
+(45, 'Dwayne Ooi', '6566196bc8541', '2023-11-29', '01:38:27pm', '6566200ee405c'),
+(46, 'Dwayne Ooi', '6566196bc8541', '2023-11-29', '01:38:32pm', '6566c95e25e02'),
+(47, 'Brad Lee', '656619dc23e65', '2023-11-29', '01:39:45pm', '65669ea1bc5d0'),
+(48, 'Brad Lee', '656619dc23e65', '2023-11-29', '01:39:50pm', '6566200ee405c'),
+(49, 'Brad Lee', '656619dc23e65', '2023-11-29', '01:39:55pm', '6566a53bf1acb'),
+(50, 'Brad Lee', '656619dc23e65', '2023-11-29', '01:40:31pm', '65661eed1f6f9'),
+(51, 'Brad Lee', '656619dc23e65', '2023-11-29', '01:40:39pm', '6566a92fbcd51'),
+(52, 'Brad Lee', '656619dc23e65', '2023-11-29', '01:40:44pm', '6566aa05ac9ba'),
+(53, 'Jennifer Log', '65661a497c941', '2023-11-29', '01:43:04pm', '65669ea1bc5d0'),
+(54, 'Jennifer Log', '65661a497c941', '2023-11-29', '01:43:08pm', '6566200ee405c'),
+(55, 'Jennifer Log', '65661a497c941', '2023-11-29', '01:43:14pm', '656620dd8bbe4'),
+(56, 'Jennifer Log', '65661a497c941', '2023-11-29', '01:43:20pm', '6566a53bf1acb'),
+(57, 'Jennifer Log', '65661a497c941', '2023-11-29', '01:43:32pm', '6566a720055d2'),
+(58, 'Jennifer Log', '65661a497c941', '2023-11-29', '01:43:38pm', '6566aa05ac9ba'),
+(59, 'Jennifer Log', '65661a497c941', '2023-11-29', '01:43:45pm', '6566c76633301'),
+(60, 'Charlie Teoh', '65661aa55c4ab', '2023-11-29', '01:47:08pm', '6566a41da70f5'),
+(61, 'Charlie Teoh', '65661aa55c4ab', '2023-11-29', '01:47:14pm', '6566a25d21a42'),
+(62, 'Charlie Teoh', '65661aa55c4ab', '2023-11-29', '01:47:19pm', '6566aa05ac9ba'),
+(63, 'Charlie Teoh', '65661aa55c4ab', '2023-11-29', '01:47:24pm', '6566a92fbcd51'),
+(64, 'Charlie Teoh', '65661aa55c4ab', '2023-11-29', '01:47:30pm', '6566c89abcc30'),
+(65, 'Charlie Teoh', '65661aa55c4ab', '2023-11-29', '01:47:34pm', '6566c805024e8'),
+(66, 'Ed Tan', '65661ae984f2b', '2023-11-29', '01:49:14pm', '65661eed1f6f9'),
+(67, 'Ed Tan', '65661ae984f2b', '2023-11-29', '01:49:20pm', '656620dd8bbe4'),
+(68, 'Leo Loh', '65661b43a4e7f', '2023-11-29', '01:49:54pm', '6566a53bf1acb'),
+(69, 'Leo Loh', '65661b43a4e7f', '2023-11-29', '01:50:01pm', '6566aa05ac9ba'),
+(70, 'Maia Ooi', '65661b9a75225', '2023-11-29', '01:50:30pm', '6566a53bf1acb'),
+(71, 'Maia Ooi', '65661b9a75225', '2023-11-29', '01:50:38pm', '6566a92fbcd51');
 
 -- --------------------------------------------------------
 
@@ -399,13 +559,13 @@ ALTER TABLE `access_log`
 -- AUTO_INCREMENT for table `donors_record`
 --
 ALTER TABLE `donors_record`
-  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `participants_record`
 --
 ALTER TABLE `participants_record`
-  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- Constraints for dumped tables

@@ -175,7 +175,7 @@
                         locationGroup_activity["Kelantan"],locationGroup_activity["Terengganu"],locationGroup_activity["Pahang"], locationGroup_activity["Kuala Lumpur"],
                         locationGroup_activity["PutraJaya"],locationGroup_activity["Selangor"],locationGroup_activity["Negeri Sembilan"],locationGroup_activity["Melaka"],
                         locationGroup_activity["Johor"],locationGroup_activity["Sarawak"],locationGroup_activity["Sabah"],locationGroup_activity["Labuan"]], // Values for each slice
-                backgroundColor: ['blue', 'pink', 'red', 'green', 'orange', 'purple', 'cyan', 'magenta', 'yellow', 'lightblue'], // Colors for each slice
+                        backgroundColor: ['blue', 'pink', 'red', 'green', 'orange', 'purple', 'cyan', 'magenta', 'yellow', 'lightblue', 'lightgreen', 'lightcoral', 'lightsalmon', 'lightseagreen', 'lightsteelblue', 'lightgoldenrodyellow']//colors for each slice            
             }]
         };
 
